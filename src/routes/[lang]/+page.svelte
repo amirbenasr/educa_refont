@@ -1,0 +1,410 @@
+<script>
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		const swiper = new Swiper('.hero__slider', {
+			autoplay: {
+				delay: 5000
+			},
+			centeredSlides: true
+		});
+		const swiper2 = new Swiper('.testimonials__slider', {
+			autoplay: {
+				delay: 3000
+			},
+
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true
+			},
+
+			breakpoints: {
+				1000: {
+					slidesPerView: 2,
+					spaceBetween: 30,
+					centeredSlides: true
+				}
+				// when window width is >= 640px
+			}
+		});
+	});
+</script>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Educa US - Study in the USA</title>
+</head>
+<dialog id="favDialog">
+	<form>
+		<p>
+			<label>
+				Favorite animal:
+				<select>
+					<option value="default">Choose…</option>
+					<option>Brine shrimp</option>
+					<option>Red panda</option>
+					<option>Spider monkey</option>
+				</select>
+			</label>
+		</p>
+		<div>
+			<button id="closeBtn" value="cancel" formmethod="dialog"> Cancel </button>
+			<button id="confirmBtn" value="default">Confirm</button>
+		</div>
+	</form>
+</dialog>
+<!-- <div class="modal">
+      <div class="modal_wrapper">
+        <div class="modal__card">
+          <header>
+            <h1>Apply now</h1>
+            <a class="close" id="close_btn" href="#">
+              <i class="fa-close fa-solid fa-xl"></i>
+            </a>
+          </header>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+            ut ad vel totam libero magni, incidunt impedit ipsam maxime sit!
+          </p>
+        </div>
+      </div>
+    </div> -->
+
+<section class="hero">
+	<div class="swiper hero__slider">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="./assets/student_front_school.png" alt="" srcset="" />
+			</div>
+			<div class="swiper-slide">
+				<img src="./assets/student.png" alt="" srcset="" />
+			</div>
+
+			<div class="swiper-slide">
+				<img src="./assets/another.png" alt="" srcset="" />
+			</div>
+			<div class="swiper-slide">
+				<img src="./assets/students_hero.png" alt="" srcset="" />
+			</div>
+		</div>
+	</div>
+	<div class="hero__content">
+		<div class="container blue">
+			<h1 class="hero__title">Unlock Your American Dream with Educa US</h1>
+			<p class="hero__subtitle">
+				Discover Limitless Opportunities for Travel and Education in the USA
+			</p>
+
+			<a id="apply" class="btn" href="#">Apply Now</a>
+		</div>
+	</div>
+</section>
+
+<section class="facts">
+	<div class="facts__list">
+		<div class="facts__card">
+			<div class="logo">
+				<i class="fa-school-flag fa-solid fa-2xl" />
+			</div>
+			<h2 class="facts__title">Top Universities</h2>
+			<p class="facts__desription">
+				We have established strong partnerships with prestigious academic institutions across the
+				USA, ensuring that you gain access to quality education and cutting-edge facilities.
+			</p>
+		</div>
+		<div class="facts__card">
+			<div class="logo">
+				<i class="fa-sliders fa-solid fa-2xl" />
+			</div>
+			<h2 class="facts__title">Personalized Programs</h2>
+			<p class="facts__desription">
+				Our team of experienced educators and advisors works closely with you to understand your
+				academic needs and preferences
+			</p>
+		</div>
+		<div class="facts__card">
+			<div class="logo">
+				<i class="fa-people-roof fa-solid fa-2xl" />
+			</div>
+			<h2 class="facts__title">Strong Community</h2>
+			<p class="facts__desription">
+				Our strong community fosters a sense of belonging, encouraging you to make lifelong
+				friendships, collaborate on projects, and engage in enriching activities together
+			</p>
+		</div>
+		<div class="facts__card">
+			<div class="logo">
+				<i class="fa-person-walking-luggage fa-solid fa-2xl" />
+			</div>
+			<h2 class="facts__title">Guidance</h2>
+			<p class="facts__desription">
+				From choosing the right program to assisting with visa applications, we'll be your trusted
+				companions, ensuring a smooth and rewarding journey towards achieving your educational
+				aspirations in the USA.
+			</p>
+		</div>
+	</div>
+</section>
+
+<div class="offer_wrapper">
+	<section class="offer container">
+		<img class="circles" src="./assets/circles.png" alt="" srcset="" />
+		<img class="circles_var" src="./assets/circles_variant.png" alt="" srcset="" />
+		<div class="left">
+			<header>
+				<h1>What We Offer</h1>
+				<p>
+					At Educa US, we take immense pride in offering a comprehensive range of services and
+					unwavering support to make your study abroad dreams a reality.
+				</p>
+			</header>
+			<div class="offers">
+				<div class="offer__card">
+					<div class="offer__avatar">
+						<i class="fa-graduation-cap fa-solid fa-xl" />
+					</div>
+					<div class="offer__content">
+						<h3>Academic Coursework</h3>
+						<p>
+							Empowering Minds, Shaping Futures - Unlocking a World of Knowledge and Inspiring
+							Academic Excellence
+						</p>
+					</div>
+				</div>
+				<div class="offer__card">
+					<div class="offer__avatar">
+						<i class="fa-cable-car fa-solid fa-xl" />
+					</div>
+					<div class="offer__content">
+						<h3>Logistics</h3>
+						<p>
+							Seamless Transitions, Stress-Free Arrangements - Ensuring Every Detail, So You Can
+							Focus on Your Journey
+						</p>
+					</div>
+				</div>
+				<div class="offer__card">
+					<div class="offer__avatar">
+						<i class="fa-project-diagram fa-solid fa-xl" />
+					</div>
+					<div class="offer__content">
+						<h3>Coordination</h3>
+						<p>
+							Your Journey, Our Precision - Expertly Orchestrating Your Study Abroad Adventure for
+							Optimal Success
+						</p>
+					</div>
+				</div>
+				<div class="offer__card">
+					<div class="offer__avatar">
+						<i class="fa-file-invoice fa-solid fa-xl" />
+					</div>
+					<div class="offer__content">
+						<h3>Visa Process</h3>
+						<p>
+							Guiding Your Path to Success - Navigating the Visa Maze with Professional Expertise
+							and Support
+						</p>
+					</div>
+				</div>
+				<div class="offer__card">
+					<div class="offer__avatar">
+						<i class="fa-shield fa-solid fa-xl" />
+					</div>
+					<div class="offer__content">
+						<h3>Safety</h3>
+						<p>
+							A Secure Haven for Your Dreams - Prioritizing Your Safety and Well-Being Throughout
+							Your Experience
+						</p>
+					</div>
+				</div>
+				<div class="offer__card">
+					<div class="offer__avatar">
+						<i class="fa-university fa-solid fa-xl" />
+					</div>
+					<div class="offer__content">
+						<h3>Best universities</h3>
+						<p>
+							Unlocking Excellence, Embracing Brilliance - Discovering Top-Ranked Institutions and
+							Limitless Possibilities
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<img src="./assets/students_park.jpg" alt="" srcset="" />
+		</div>
+	</section>
+</div>
+
+<section class="stats">
+	<div class="custom-shape-divider-top">
+		<svg
+			data-name="Layer 1"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 1200 120"
+			preserveAspectRatio="none"
+		>
+			<path
+				d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+				opacity=".25"
+				class="shape-fill"
+			/>
+			<path
+				d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+				opacity=".5"
+				class="shape-fill"
+			/>
+			<path
+				d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+				class="shape-fill"
+			/>
+		</svg>
+	</div>
+	<div class="custom-shape-divider-bottom">
+		<svg
+			data-name="Layer 1"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 1200 120"
+			preserveAspectRatio="none"
+		>
+			<path
+				d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+				opacity=".25"
+				class="shape-fill"
+			/>
+			<path
+				d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+				opacity=".5"
+				class="shape-fill"
+			/>
+			<path
+				d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+				class="shape-fill"
+			/>
+		</svg>
+	</div>
+	<div class="card">
+		<div class="stats__content">
+			<!-- <div class="content__image">
+            <img src="./assets/secret_teacher.png" alt="" srcset="" />
+          </div> -->
+			<div class="content__text container">
+				<div class="content__title">
+					<h1>We design your best program</h1>
+					<p>
+						Our team makes sure, that every student gets the best program that fits his direction.
+					</p>
+					<p>
+						Through personalized academic guidance, we assist students in finding the ideal
+						institutions that align with their aspirations and career goals.
+					</p>
+				</div>
+			</div>
+			<div class="container stats__list">
+				<div class="stats__card">
+					<h2>700+</h2>
+					<p>Students in USA</p>
+				</div>
+				<div class="stats__card">
+					<h2>#1</h2>
+					<p>Agency in Tunisia</p>
+				</div>
+				<div class="stats__card">
+					<h2>99%</h2>
+					<p>Visa Approval Rate</p>
+				</div>
+				<div class="stats__card">
+					<h2>30+</h2>
+					<p>universities</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="testimonials">
+	<header>
+		<h1>Our students says about us</h1>
+		<h3>Stories of Success with Educa US</h3>
+	</header>
+	<div class="swiper testimonials__slider">
+		<div class="swiper-wrapper testimonials__list">
+			<div class="swiper-slide">
+				<div class="testimonial__card">
+					<div class="testimonial__avatar">
+						<img src="./assets/siwar.jpg" alt="" srcset="" />
+					</div>
+					<div class="testimonial__content">
+						<div class="testimonial__description">
+							<p>
+								With the guidance and assistance of Educa US, I was able to successfully pursue my
+								studies in IT and obtain a visa to study in the United States.
+							</p>
+						</div>
+						<div class="testimonial__name"><h3>Siwar Ben Khlifa</h3></div>
+						<span class="testimonial__specialty">Student</span>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="testimonial__card">
+					<div class="testimonial__avatar">
+						<img src="./assets/walid.jpg" alt="" srcset="" />
+					</div>
+					<div class="testimonial__content">
+						<div class="testimonial__description">
+							<p>
+								With the right resources and support from EducaUS, I can navigate my differences and
+								find a path that aligns with my goals and aspirations
+							</p>
+						</div>
+						<div class="testimonial__name"><h3>Walid Ferjani</h3></div>
+						<span class="testimonial__specialty">Student</span>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="testimonial__card">
+					<div class="testimonial__avatar">
+						<img src="./assets/mahdi.jpg" alt="" srcset="" />
+					</div>
+					<div class="testimonial__content">
+						<div class="testimonial__description">
+							<p>
+								Educa US offered expert guidance to help me choose the right college and navigate
+								the application process, ultimately helping me achieve my professional pursuits.
+							</p>
+						</div>
+						<div class="testimonial__name"><h3>Mahdi Daraji</h3></div>
+						<span class="testimonial__specialty">Student</span>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="testimonial__card">
+					<div class="testimonial__avatar">
+						<img src="./assets/eya.jpg" alt="" srcset="" />
+					</div>
+					<div class="testimonial__content">
+						<div class="testimonial__description">
+							<p>
+								Since childhood, I have nurtured the dream of studying in the United States, and
+								thanks to EducaUs, I was able to realize that dream.
+							</p>
+						</div>
+						<div class="testimonial__name"><h3>Aya Trabelsi</h3></div>
+						<span class="testimonial__specialty">Student</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-pagination" />
+
+		<!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+	</div>
+</section>
