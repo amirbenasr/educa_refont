@@ -1,32 +1,41 @@
 <script>
 	import { language, languages, switchLanguage } from '@inlang/sdk-js';
-	// const buttonMenu = document.querySelector('.btn-menu');
-	// const navMobile = document.querySelector('nav ul');
-	// const faIcon = document.querySelector('i');
-	// const favDialog = document.getElementById('favDialog');
-	// const apply = document.querySelectorAll('#apply');
-	// const closeBtn = document.getElementById('closeBtn');
-	// const body = document.body;
+	import { onMount } from 'svelte';
+	let buttonMenu;
+	let navMobile;
+	let faIcon;
+	let opened = false;
 
-	// buttonMenu.addEventListener('click', function (e) {
-	// 	e.preventDefault();
-	// 	faIcon.classList.toggle('fa-close');
-	// 	navMobile.classList.toggle('mobile');
-	// });
+	const toggleMenu = (e) => {
+		opened = !opened;
+		navMobile.classList.toggle('opened');
+		faIcon.classList.toggle('fa-close');
+	};
+	onMount(() => {
+		const btnLinks = document.querySelectorAll('.mobile-nav > ul > a');
+		const favDialog = document.getElementById('favDialog');
+		const apply = document.querySelectorAll('#apply');
+		const closeBtn = document.getElementById('closeBtn');
+		const body = document.body;
 
-	// apply.forEach((element) => {
-	// 	element.addEventListener('click', function (e) {
-	// 		favDialog.showModal();
-	// 		body.classList.add('overflow-hidden');
-	// 		// document.documentElement.classList.add("overflow-hidden");
-	// 	});
-	// });
+		apply.forEach((element) => {
+			element.addEventListener('click', function (e) {
+				favDialog.showModal();
+				body.classList.add('overflow-hidden');
+			});
+		});
 
-	// closeBtn.addEventListener('click', function (e) {
-	// 	// modal.classList.remove("active");
-	// 	body.classList.remove('overflow-hidden');
-	// 	favDialog.close();
-	// });
+		closeBtn.addEventListener('click', function (e) {
+			body.classList.remove('overflow-hidden');
+			favDialog.close();
+		});
+
+		btnLinks.forEach((element) => {
+			element.addEventListener('click', function (e) {
+				toggleMenu(e);
+			});
+		});
+	});
 </script>
 
 <header>
@@ -56,29 +65,50 @@
 	<div class="nav_wrapper">
 		<nav class="container">
 			<div class="logo">
-				<a href="/">
+				<a
+					on:click={(e) => {
+						if (opened) {
+							toggleMenu(e);
+						}
+					}}
+					href="/"
+				>
 					<img src="../assets/logo.svg" alt="" srcset="" />
 				</a>
 			</div>
-			<div class="menu">
-				<a class="btn-menu" href="#">
+			<div class="desktop-nav">
+				<ul>
+					<a href="/"> <li>Home</li> </a><a href="/{language}/about"> <li>About</li> </a><a
+						href="/{language}/contact"
+					>
+						<li>Contact</li>
+					</a>
+					<a href="/{language}/blog">
+						<li>Blog</li>
+					</a>
+				</ul>
+			</div>
+			<div class="mobile-menu">
+				<a class="btn-menu" href="#" bind:this={buttonMenu} on:click={toggleMenu}>
 					<span>
 						<h4 style="color: white">Menu</h4>
-						<i class="fa-bars fa-solid fa-xl" />
+						<i class="fa-bars fa-solid fa-xl" bind:this={faIcon} />
 					</span>
 				</a>
+				<div class="mobile-nav" bind:this={navMobile}>
+					<ul>
+						<a href="/"> <li>Home</li> </a><a href="/{language}/about"> <li>About</li> </a><a
+							href="/{language}/contact"
+						>
+							<li>Contact</li>
+						</a>
+						<a href="/{language}/blog">
+							<li>Blog</li>
+						</a>
+					</ul>
+				</div>
 			</div>
-			<ul class="">
-				<a href="/"> <li>Home</li> </a><a href="/{language}/about"> <li>About</li> </a><a
-					href="/{language}/contact"
-				>
-					<li>Contact</li>
-				</a>
-				<a href="/{language}/blog">
-					<li>Blog</li>
-				</a>
-			</ul>
-			<a id="apply" href="#" class="btn">Apply</a>
+			<!-- <a id="apply" href="#" class="btn">Apply</a> -->
 			<div class="languages">
 				<ul>
 					{#each languages as _}

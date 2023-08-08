@@ -35,7 +35,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Educa US - Study in the USA</title>
 </head>
-<dialog id="favDialog">
+
+<!-- <dialog id="favDialog">
 	<form>
 		<p>
 			<label>
@@ -53,7 +54,7 @@
 			<button id="confirmBtn" value="default">Confirm</button>
 		</div>
 	</form>
-</dialog>
+</dialog> -->
 <!-- <div class="modal">
       <div class="modal_wrapper">
         <div class="modal__card">
@@ -89,6 +90,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="hero__content">
 		<div class="container blue">
 			<h1 class="hero__title">Unlock Your American Dream with Educa US</h1>
@@ -96,7 +98,7 @@
 				Discover Limitless Opportunities for Travel and Education in the USA
 			</p>
 
-			<a id="apply" class="btn" href="#">Apply Now</a>
+			<a id="apply" class="btn" href="en/contact">Contact Us</a>
 		</div>
 	</div>
 </section>
