@@ -73,7 +73,7 @@
 					}}
 					href="/"
 				>
-					<img src="../assets/logo.svg" alt="" srcset="" />
+					<img src="/assets/logo.svg" alt="" srcset="" />
 				</a>
 			</div>
 			<div class="desktop-nav">
@@ -124,14 +124,14 @@
 
 <style>
 	@media (width > 1260px) {
-		header {
+		/* header {
 			height: 90px !important;
-		}
+		} */
 	}
 	@media (width > 760px) {
-		header {
+		/* header {
 			height: 75px !important;
-		}
+		} */
 	}
 	:global(.active) {
 		font-weight: bold !important;

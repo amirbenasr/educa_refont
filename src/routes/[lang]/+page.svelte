@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
+	import ArticlesList from './blog/ArticlesList.svelte';
 
 	onMount(() => {
 		const swiper = new Swiper('.hero__slider', {
@@ -330,7 +331,7 @@
 
 <section class="testimonials">
 	<header>
-		<h1>Our students says about us</h1>
+		<h1>Our students say about us</h1>
 		<h3>Stories of Success with Educa US</h3>
 	</header>
 	<div class="swiper testimonials__slider">
@@ -395,7 +396,7 @@
 						<div class="testimonial__description">
 							<p>
 								Since childhood, I have nurtured the dream of studying in the United States, and
-								thanks to EducaUs, I was able to realize that dream.
+								thanks to Educa Us, I was able to realize that dream.
 							</p>
 						</div>
 						<div class="testimonial__name"><h3>Aya Trabelsi</h3></div>
@@ -410,3 +411,15 @@
         <div class="swiper-button-next"></div> -->
 	</div>
 </section>
+
+<section class="blog">
+	<h1>Our Blog</h1>
+
+	<h2>Latest Articles</h2>
+	<!-- {#await getPosts() then articles} -->
+	<ArticlesList data="" />
+	<!-- {/await} -->
+</section>
+
+<style>
+</style>

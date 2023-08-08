@@ -1,3 +1,7 @@
+<script>
+	import { language, languages, switchLanguage } from '@inlang/sdk-js';
+</script>
+
 <footer class="">
 	<div class="footer container">
 		<div class="footer__section">
@@ -13,9 +17,9 @@
 		<div class="footer__section">
 			<h3>Links</h3>
 			<ul>
-				<li><a href="/about">About</a></li>
-				<li><a href="/blog">Blog</a></li>
-				<li><a href="/contact">Contact</a></li>
+				<li><a href="/{language}/about">About</a></li>
+				<li><a href="/{language}/blog">Blog</a></li>
+				<li><a href="/{language}/contact">Contact</a></li>
 			</ul>
 		</div>
 		<div class="footer__section">
@@ -33,9 +37,13 @@
 			<h3>Socials</h3>
 
 			<div class="socials">
-				<a href="fb"><i class="fa-brands fa-facebook fa-solid fa-xl" /></a>
+				<a href="https://www.facebook.com/EducaUS.tn"
+					><i class="fa-brands fa-facebook fa-solid fa-xl" /></a
+				>
 
-				<a href=""><i class="fa-brands fa-instagram fa-solid fa-xl" /></a>
+				<a href="https://www.instagram.com/educa_us/"
+					><i class="fa-brands fa-instagram fa-solid fa-xl" /></a
+				>
 			</div>
 		</div>
 	</div>
