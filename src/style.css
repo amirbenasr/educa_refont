@@ -108,44 +108,55 @@ span {
 		display: block !important;
 	}
 	.blue {
-		background-color: var(--primary-color) !important;
-		opacity: 0.95;
+		background: var(--primary-color) !important;
+		opacity: 0.95 !important;
 	}
 	@keyframes animatedBackground {
 		0% {
-			background-position: 0% 0%;
-		}
-		50% {
-			background-position: 100% 0%;
+			transform: translate(0);
 		}
 		100% {
-			background-position: 0% 0%;
+			transform: translate(-750px); /* The image width */
 		}
 	}
 	section.hero {
-		width: 100%;
+		/* width: 100%; */
 		overflow-x: hidden !important;
 		display: flex;
 		flex-direction: row !important;
+		color: white;
 
+		& .content_wrapper {
+			flex-basis: 50%;
+			overflow: hidden !important;
+			position: relative;
+		}
 		& .hero__content {
+			width: 9375px;
+
+			height: 100%;
 			background-color: var(--primary-color) !important;
 			background-image: url('../assets/stars.svg');
 			background-repeat: repeat-x;
-			background-size: cover;
-			opacity: 0.965;
+			background-size: contain;
+			/* opacity: 0.965; */
 			animation: animatedBackground 10s linear infinite;
-
-			order: -1;
-			flex-basis: 50% !important;
-			position: relative;
+			order: 0 !important;
+			z-index: -1;
 			& h1 {
+				color: white !important;
 				font-size: 3rem;
 			}
-			& .container {
-				padding: 1rem;
-				border: 3px dashed white;
-			}
+		}
+		.box {
+			width: 80% !important;
+			border: 3px dashed white;
+			top: 50%;
+			bottom: unset;
+			left: 0 !important;
+			right: 0 !important;
+			margin: 0 auto;
+			transform: translateY(-50%);
 		}
 		& .hero__slider {
 			padding: 1rem;
@@ -269,6 +280,7 @@ span {
 		gap: 1rem;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
 	}
 
 	.content__image {
@@ -520,6 +532,15 @@ h1.hero__title {
 	padding: var(--gap-flex);
 	z-index: 1;
 }
+.box {
+	width: 100%;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	padding: var(--gap-flex);
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+	z-index: 5;
+}
 
 a.btn {
 	display: block;
@@ -653,6 +674,7 @@ section.stats {
 		#c31660,
 		#d81e2b
 	);
+	border-bottom-left-radius: 15% 15%;
 	background: var(--primary-color);
 
 	& .content__image {
@@ -734,6 +756,7 @@ section.stats {
 	height: 250px;
 }
 .testimonials {
+	position: relative;
 	text-align: center;
 	& header {
 		margin-bottom: var(--space-y);

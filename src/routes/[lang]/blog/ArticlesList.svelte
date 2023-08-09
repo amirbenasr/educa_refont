@@ -69,6 +69,8 @@
 		width: 100%;
 		padding: 5px;
 		margin: 0 7px 10px 0;
+		transition: all 500ms ease;
+
 		& .top-section {
 			min-height: 200px;
 		}
@@ -90,6 +92,11 @@
 			font: var(--fa-font-solid);
 			content: '\f138';
 			color: var(--secondary-color);
+		}
+		&:hover {
+			box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.8);
+			scale: 1.01;
+			cursor: pointer;
 		}
 	}
 

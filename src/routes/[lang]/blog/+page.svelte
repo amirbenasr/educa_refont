@@ -5,6 +5,7 @@
 	import type { Article } from '$lib/articles';
 	import { language } from '@inlang/sdk-js';
 	import { onMount } from 'svelte';
+	import Layout from '$lib/components/Layout.svelte';
 	/** @type {import('./$types').PageData} */
 	export let data;
 	const url = 'https://wordpress.educaus.net/index.php/wp-json/wp/v2/posts';
@@ -22,14 +23,16 @@
 	});
 </script>
 
-<section class="blog">
-	<h1>Our Blog</h1>
+<Layout img="../assets/blog.jpg" title="Blog">
+	<section class="blog">
+		<h1>Our Blog</h1>
 
-	<h2>Latest Articles</h2>
-	<!-- {#await getPosts() then articles} -->
-	<ArticlesList />
-	<!-- {/await} -->
-</section>
+		<h2>Latest Articles</h2>
+		<!-- {#await getPosts() then articles} -->
+		<ArticlesList />
+		<!-- {/await} -->
+	</section>
+</Layout>
 
 <style>
 	@media (min-width: 960px) {
