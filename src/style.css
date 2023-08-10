@@ -116,7 +116,7 @@ span {
 			transform: translate(0);
 		}
 		100% {
-			transform: translate(-750px); /* The image width */
+			transform: translate(-900px); /* The image width */
 		}
 	}
 	section.hero {
@@ -280,7 +280,7 @@ span {
 		gap: 1rem;
 		justify-content: center;
 		align-items: center;
-		text-align: center;
+		text-align: center !important;
 	}
 
 	.content__image {
@@ -349,10 +349,11 @@ body {
 		}
 	}
 }
+
 .mobile-menu {
 	border: 1px solid white;
 	position: relative;
-	padding: 1rem;
+	padding-block: 1rem;
 	margin-left: auto;
 	justify-self: flex-end;
 	& span > * {
@@ -398,7 +399,7 @@ i {
 }
 .nav_wrapper {
 	z-index: 9999;
-
+	padding-block: 0.2rem;
 	position: relative;
 	background-color: var(--secondary-color);
 }
@@ -662,6 +663,9 @@ section.offer {
 }
 
 section.stats {
+	display: flex;
+	justify-content: center;
+	text-align: center !important;
 	/* color: ; */
 	padding-block: 10rem;
 	position: relative;

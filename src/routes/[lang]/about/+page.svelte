@@ -14,11 +14,10 @@
 			<h2>Who We Are</h2>
 			<p>
 				Educa US is a leading educational travel agency that specializes in creating unforgettable
-				journeys for students, educators, and lifelong learners. With a passion for education and a
-				commitment to excellence, our team of experienced professionals curates immersive travel
-				programs that combine learning, exploration, and adventure. Whether you're a student seeking
-				a study abroad opportunity or an educator planning an educational tour for your students, we
-				have the expertise and resources to make your dream trip a reality.
+				journeys for students, and lifelong learners. With a passion for education and a commitment
+				to excellence, our team of experienced professionals curates immersive travel programs that
+				combine learning, exploration, and adventure. We have the expertise and resources to make
+				your dream trip a reality.
 			</p>
 		</section>
 

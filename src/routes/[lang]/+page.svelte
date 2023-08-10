@@ -79,17 +79,17 @@
 		<div class="swiper hero__slider">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<img src="./assets/student_front_school.png" alt="" srcset="" />
+					<img src="./gallery/2.png" alt="" srcset="" />
 				</div>
-				<div class="swiper-slide">
-					<img src="./assets/student.png" alt="" srcset="" />
-				</div>
+				<!-- <div class="swiper-slide">
+					<img src="./gallery/1.png" alt="" srcset="" />
+				</div> -->
 
 				<div class="swiper-slide">
-					<img src="./assets/another.png" alt="" srcset="" />
+					<img src="./gallery/3.png" alt="" srcset="" />
 				</div>
 				<div class="swiper-slide">
-					<img src="./assets/students_hero.png" alt="" srcset="" />
+					<img src="./gallery/6.png" alt="" srcset="" />
 				</div>
 			</div>
 		</div>
