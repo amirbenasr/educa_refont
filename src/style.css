@@ -136,7 +136,7 @@ span {
 
 			height: 100%;
 			background-color: var(--primary-color) !important;
-			background-image: url('../assets/stars.svg');
+			background-image: url('/assets/stars.svg');
 			background-repeat: repeat-x;
 			background-size: contain;
 			/* opacity: 0.965; */
@@ -746,7 +746,7 @@ section.stats {
 .testimonial__description::before {
 	content: '';
 	background: no-repeat;
-	background-image: url('../assets/quote.png');
+	background-image: url('/assets/quote.png');
 	position: absolute;
 	left: 0;
 	transform: translateX(-50%);
