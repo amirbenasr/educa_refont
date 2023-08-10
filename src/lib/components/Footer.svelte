@@ -37,11 +37,11 @@
 			<h3>Socials</h3>
 
 			<div class="socials">
-				<a href="https://www.facebook.com/EducaUS.tn"
+				<a target="_blank" href="https://www.facebook.com/EducaUS.tn"
 					><i class="fa-brands fa-facebook fa-solid fa-xl" /></a
 				>
 
-				<a href="https://www.instagram.com/educa_us/"
+				<a target="_blank" href="https://www.instagram.com/educa_us/"
 					><i class="fa-brands fa-instagram fa-solid fa-xl" /></a
 				>
 			</div>

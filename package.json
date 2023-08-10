@@ -26,6 +26,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@inlang/sdk-js": "^0.11.0"
+		"@inlang/sdk-js": "^0.11.0",
+		"nodemailer": "^6.9.4",
+		"svelte-email": "^0.0.4"
 	}
 }

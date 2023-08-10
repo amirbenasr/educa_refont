@@ -140,7 +140,7 @@ span {
 			background-repeat: repeat-x;
 			background-size: contain;
 			/* opacity: 0.965; */
-			animation: animatedBackground 10s linear infinite;
+			animation: animatedBackground 25s linear infinite;
 			order: 0 !important;
 			z-index: -1;
 			& h1 {
