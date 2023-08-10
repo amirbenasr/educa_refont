@@ -21,5 +21,5 @@
 		Phone: {phone}
 	</Text>
 	<Hr />
-	<Button href="https://arlington-high.com/">Visit Arlington-High</Button>
+	<Button href="https://educaus.net/">Visit Educa US</Button>
 </Html>
