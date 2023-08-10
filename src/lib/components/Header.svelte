@@ -109,7 +109,7 @@
 				</div>
 			</div>
 			<!-- <a id="apply" href="#" class="btn">Apply</a> -->
-			<div class="languages">
+			<!-- <div class="languages">
 				<ul>
 					{#each languages as _}
 						<li class:active={_ == language}>
@@ -117,7 +117,7 @@
 						</li>
 					{/each}
 				</ul>
-			</div>
+			</div> -->
 		</nav>
 	</div>
 </header>
@@ -132,6 +132,8 @@
 		/* header {
 			height: 75px !important;
 		} */
+	}
+	@media (min-width: 800px) {
 	}
 	:global(.active) {
 		font-weight: bold !important;
