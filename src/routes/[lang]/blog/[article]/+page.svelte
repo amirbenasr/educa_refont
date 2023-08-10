@@ -9,7 +9,7 @@
 	let fullContent;
 	let article: Article;
 	// Replace with the actual post ID
-	const apiUrl = `http://wordpress.educaus.net/wp-json/wp/v2/posts/${data.article}`;
+	const apiUrl = `https://wordpress.educaus.net/wp-json/wp/v2/posts/${data.article}`;
 
 	const loadArticle = async (id) => {
 		const response = JSON.stringify(await (await fetch(apiUrl)).json());
