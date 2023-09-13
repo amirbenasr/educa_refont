@@ -79,30 +79,50 @@
 		<div class="swiper hero__slider">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<img src="./gallery/2.png" alt="" srcset="" />
+					<img src="./assets/img2.jpg" alt="" srcset="" />
 				</div>
-				<!-- <div class="swiper-slide">
-					<img src="./gallery/1.png" alt="" srcset="" />
-				</div> -->
+				<div class="swiper-slide">
+					<img src="./assets/img1.jpg" alt="" srcset="" />
+				</div>
 
 				<div class="swiper-slide">
-					<img src="./gallery/3.png" alt="" srcset="" />
+					<img src="./assets/img3.jpg" alt="" srcset="" />
 				</div>
 				<div class="swiper-slide">
-					<img src="./gallery/6.png" alt="" srcset="" />
+					<img src="./assets/img4.jpg" alt="" srcset="" />
 				</div>
 			</div>
 		</div>
+
 		<div class="content_wrapper">
 			<div class="hero__content" />
 
-			<div class="box blue">
-				<h1 class="hero__title">Unlock Your American Dream with Educa US</h1>
-				<p class="hero__subtitle">
-					Discover Limitless Opportunities for Travel and Education in the USA
-				</p>
-
-				<a id="apply" class="btn" href="en/contact">Contact Us</a>
+			<div class="flex-col">
+				<div class="box blue">
+					<h1 class="hero__title">Unlock Your American Dream with Educa US</h1>
+					<p class="hero__subtitle">
+						Discover Limitless Opportunities for Travel and Education in the USA
+					</p>
+					<div class="stats__list">
+						<div class="stats__card">
+							<h2>700+</h2>
+							<p>Students in USA</p>
+						</div>
+						<div class="stats__card">
+							<h2>#1</h2>
+							<p>Agency in Tunisia</p>
+						</div>
+						<div class="stats__card">
+							<h2>99%</h2>
+							<p>Visa Approval Rate</p>
+						</div>
+						<div class="stats__card">
+							<h2>30+</h2>
+							<p>universities</p>
+						</div>
+					</div>
+					<!-- <a id="apply" class="btn" href="en/contact">Contact Us</a> -->
+				</div>
 			</div>
 		</div>
 	</section>
