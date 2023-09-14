@@ -420,7 +420,12 @@
 		</div>
 		<section>
 			<div id="lightgallery" class="lightgallery">
-				<a href="./assets/img1.jpg">
+				{#each Array(12) as _, idx}
+					<a href="./gallery/{idx}.jpg">
+						<img alt="image {idx}" src="./gallery/{idx}.jpg" />
+					</a>
+				{/each}
+				<!-- <a href="./assets/img1.jpg">
 					<img alt="img1" src="./assets/img1.jpg" />
 				</a>
 				<a href="./assets/img2.jpg">
@@ -452,7 +457,7 @@
 				</a>
 				<a href="./assets/img2.jpg">
 					<img alt="img2" src="./assets/img2.jpg" />
-				</a>
+				</a> -->
 			</div>
 		</section>
 		<!-- <div class="custom-shape-divider-bottom">
