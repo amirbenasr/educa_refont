@@ -193,7 +193,7 @@
 
 			<div class="flex-col">
 				<div class="box blue">
-					<div class="flex" style="display: flex; align-items:start;gap:2rem">
+					<div class="flex-z">
 						<div class="text-content">
 							<div class="animated-text">
 								<h1 class="hero__title">

@@ -217,14 +217,7 @@ span {
 	:root {
 		--gap-flex: 1rem;
 	}
-	.stats__list {
-		/* display: grid; */
-		/* grid-auto-columns: minmax(0, 1fr);
-		grid-auto-flow: column; */
-		/* grid-auto-flow: column; */
 
-		/* grid-template-columns: repeat(4, 1fr) !important; */
-	}
 	section.offer {
 		display: flex;
 		justify-content: center;
@@ -743,15 +736,20 @@ section.stats {
 	overflow: hidden;
 	line-height: 0;
 }
+.flex-z {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+}
 .stats__list {
 	height: min-content;
 	margin-bottom: 1rem;
-	/* display: flex;
-	flex-wrap: wrap; */
+	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	margin-top: var(--space-y);
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	/* grid-template-columns: 1fr 1fr; */
 	gap: 1rem;
+	margin-top: var(--space-y);
 
 	& > *::after {
 		display: block;
