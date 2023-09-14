@@ -83,7 +83,7 @@
 					<p>Students Studied Abroad</p>
 				</div>
 				<div class="stat-item">
-					<h3>12+</h3>
+					<h3>7+</h3>
 					<p>Years of Experience</p>
 				</div>
 				<div class="stat-item">

@@ -1,8 +1,103 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import ArticlesList from './blog/ArticlesList.svelte';
+	import lightGallery from 'lightgallery';
 
+	// Plugins
+	import lgThumbnail from 'lightgallery/plugins/thumbnail';
+	import lgZoom from 'lightgallery/plugins/zoom';
+
+	// gsap
+	import { gsap } from 'gsap';
+	import TextPlugin from 'gsap/dist/TextPlugin';
+	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+
+	let index = 0;
+	function counterEffect(element, val) {
+		index++;
+		gsap.to(element, {
+			innerText: val,
+			duration: 1,
+			ease: 'linear',
+			delay: 0.5 + index,
+			snap: {
+				innerText: 1
+			}
+		});
+	}
 	onMount(() => {
+		gsap.registerPlugin(TextPlugin);
+		gsap.registerPlugin(ScrollTrigger);
+
+		// create scrolltriggers
+		const offerTrigger = ScrollTrigger.create({
+			// markers: true,
+			start: 'top 60%',
+			end: 'bottom 20%',
+			trigger: 'section.offer'
+		});
+
+		const galleryTrigger = ScrollTrigger.create({
+			trigger: 'section.stats',
+			// markers: true,
+			start: 'top 50%',
+			onEnter: () => {
+				tl_staggered.play();
+			}
+		});
+		// creating timelines
+		const tl_hero = gsap.timeline({});
+
+		const tl_staggered = gsap.timeline({});
+
+		const tl_gallery = gsap.timeline({
+			scrollTrigger: galleryTrigger
+		});
+
+		const tl_offers = gsap.timeline({
+			paused: true,
+			scrollTrigger: offerTrigger
+		});
+
+		// creating Gallery timeline
+
+		const galleryImages = document.querySelectorAll('.lightgallery a');
+
+		galleryImages.forEach((img, ix) => {
+			tl_gallery.fromTo(img, { opacity: 0 }, { x: 15, opacity: 1, duration: 0.09 });
+		});
+
+		const listItems = document.querySelectorAll('.offer__card');
+
+		// offers timeline
+		listItems.forEach((element, ix) => {
+			tl_offers.fromTo(
+				element,
+				{
+					x: '0',
+					y: 0,
+					opacity: 0
+				},
+				{
+					x: 10,
+					opacity: 1,
+					duration: 0.6
+				}
+			);
+		});
+
+		// initialize lightGallery
+		lightGallery(document.getElementById('lightgallery')!, {
+			download: false,
+			allowMediaOverlap: true,
+			plugins: [lgZoom, lgThumbnail],
+			speed: 500,
+			licenseKey: '0000-0000-000-0000',
+			height: '500px',
+			width: '80%'
+		});
+		// init swiper
+
 		const swiper = new Swiper('.hero__slider', {
 			autoplay: {
 				delay: 5000
@@ -28,6 +123,58 @@
 				// when window width is >= 640px
 			}
 		});
+
+		// create animations using timeline
+		const textContainer = document.querySelector('.text-content');
+		const animatedText = document.querySelector('.animated-text');
+
+		let n_s = document.getElementById('n_s');
+		let n_r = document.getElementById('n_r');
+		let n_u = document.getElementById('n_u');
+
+		tl_hero
+			.from(textContainer, { opacity: 0, duration: 0.5, ease: 'power2.inOut' })
+			.from(animatedText, { y: 50, opacity: 0, duration: 0.5, ease: 'power2.out' }) // Staggered Button Animation
+			.add(() => {
+				const buttons = document.querySelectorAll('.stats__card');
+
+				buttons.forEach((button, index) => {
+					tl_staggered.fromTo(
+						button,
+						{
+							opacity: 0,
+							y: 50
+						},
+						{
+							opacity: 1,
+							y: 0,
+							duration: 0.5,
+							ease: 'power2.inOut'
+						}
+					);
+				});
+			})
+			.add(counterEffect(n_s, 700))
+			.add(counterEffect(n_r, 99))
+			.add(counterEffect(n_u, 30));
+	});
+	// text machine animation
+	// script.js
+	onMount(() => {
+		// counter animation
+
+		const textElement = document.querySelector('.hero__subtitle');
+		const text =
+			'Discover Limitless  <br /> Opportunities <br /> for Travel and  <br /> Education in the USA';
+
+		gsap.to(textElement, {
+			text: {
+				value: text,
+				delimiter: ''
+			},
+			duration: 3, // Adjust the typing speed
+			ease: 'power1.inOut'
+		});
 	});
 </script>
 
@@ -37,45 +184,49 @@
 	<title>Educa US - Study in the USA</title>
 </head>
 
-<!-- <dialog id="favDialog">
-	<form>
-		<p>
-			<label>
-				Favorite animal:
-				<select>
-					<option value="default">Choose…</option>
-					<option>Brine shrimp</option>
-					<option>Red panda</option>
-					<option>Spider monkey</option>
-				</select>
-			</label>
-		</p>
-		<div>
-			<button id="closeBtn" value="cancel" formmethod="dialog"> Cancel </button>
-			<button id="confirmBtn" value="default">Confirm</button>
-		</div>
-	</form>
-</dialog> -->
-<!-- <div class="modal">
-      <div class="modal_wrapper">
-        <div class="modal__card">
-          <header>
-            <h1>Apply now</h1>
-            <a class="close" id="close_btn" href="#">
-              <i class="fa-close fa-solid fa-xl"></i>
-            </a>
-          </header>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            ut ad vel totam libero magni, incidunt impedit ipsam maxime sit!
-          </p>
-        </div>
-      </div>
-    </div> -->
 {#if true == false}
 	loading...
 {:else}
 	<section class="hero">
+		<div class="content_wrapper">
+			<div class="hero__content" />
+
+			<div class="flex-col">
+				<div class="box blue">
+					<div class="flex" style="display: flex; align-items:start;gap:2rem">
+						<div class="text-content">
+							<div class="animated-text">
+								<h1 class="hero__title">
+									Unlock Your <br /> American Dream <br /> with Educa US
+								</h1>
+
+								<p class="hero__subtitle" />
+							</div>
+						</div>
+						<div class="stats__list">
+							<div class="stats__card">
+								<h2><span id="n_s" />+</h2>
+								<p>Students in USA</p>
+							</div>
+							<div class="stats__card">
+								<h2>#1</h2>
+								<p>Agency in Tunisia</p>
+							</div>
+							<div class="stats__card">
+								<h2><span id="n_r">0</span>%</h2>
+								<p>Visa Approval Rate</p>
+							</div>
+							<div class="stats__card">
+								<h2><span id="n_u">0</span>+</h2>
+								<p>universities</p>
+							</div>
+						</div>
+					</div>
+
+					<a id="apply" class="btn" href="en/contact">Contact Us</a>
+				</div>
+			</div>
+		</div>
 		<div class="swiper hero__slider">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
@@ -90,38 +241,6 @@
 				</div>
 				<div class="swiper-slide">
 					<img src="./assets/img4.jpg" alt="" srcset="" />
-				</div>
-			</div>
-		</div>
-
-		<div class="content_wrapper">
-			<div class="hero__content" />
-
-			<div class="flex-col">
-				<div class="box blue">
-					<h1 class="hero__title">Unlock Your American Dream with Educa US</h1>
-					<p class="hero__subtitle">
-						Discover Limitless Opportunities for Travel and Education in the USA
-					</p>
-					<div class="stats__list">
-						<div class="stats__card">
-							<h2>700+</h2>
-							<p>Students in USA</p>
-						</div>
-						<div class="stats__card">
-							<h2>#1</h2>
-							<p>Agency in Tunisia</p>
-						</div>
-						<div class="stats__card">
-							<h2>99%</h2>
-							<p>Visa Approval Rate</p>
-						</div>
-						<div class="stats__card">
-							<h2>30+</h2>
-							<p>universities</p>
-						</div>
-					</div>
-					<!-- <a id="apply" class="btn" href="en/contact">Contact Us</a> -->
 				</div>
 			</div>
 		</div>
@@ -261,7 +380,16 @@
 				</div>
 			</div>
 			<div class="right">
-				<img src="./assets/students_park.jpg" alt="" srcset="" />
+				<video
+					class="video"
+					style="object-fit: contain; max-width:100% max-height:100%"
+					src="./assets/video.mp4"
+					loop
+					muted
+					autoplay
+					controls
+				/>
+				<!-- <img src="./assets/students_park.jpg" alt="" srcset="" /> -->
 			</div>
 		</section>
 	</div>
@@ -290,6 +418,43 @@
 				/>
 			</svg>
 		</div>
+		<section>
+			<div id="lightgallery" class="lightgallery">
+				<a href="./assets/img1.jpg">
+					<img alt="img1" src="./assets/img1.jpg" />
+				</a>
+				<a href="./assets/img2.jpg">
+					<img alt="img2" src="./assets/img2.jpg" />
+				</a>
+				<a href="./assets/img2.jpg">
+					<img alt="img2" src="./assets/img2.jpg" />
+				</a>
+				<a href="./assets/img2.jpg">
+					<img alt="img2" src="./assets/img2.jpg" />
+				</a>
+				<a href="./assets/img2.jpg">
+					<img alt="img2" src="./assets/img2.jpg" />
+				</a>
+				<a href="./assets/img2.jpg">
+					<img alt="img2" src="./assets/img2.jpg" />
+				</a>
+				<a href="./assets/img2.jpg">
+					<img alt="img2" src="./assets/img2.jpg" />
+				</a>
+				<a href="./assets/img2.jpg">
+					<img alt="img2" src="./assets/img2.jpg" />
+				</a>
+				<a href="./assets/img2.jpg">
+					<img alt="img2" src="./assets/img2.jpg" />
+				</a>
+				<a href="./assets/img2.jpg">
+					<img alt="img2" src="./assets/img2.jpg" />
+				</a>
+				<a href="./assets/img2.jpg">
+					<img alt="img2" src="./assets/img2.jpg" />
+				</a>
+			</div>
+		</section>
 		<!-- <div class="custom-shape-divider-bottom">
 			<svg
 				data-name="Layer 1"
