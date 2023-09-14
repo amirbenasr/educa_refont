@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import ArticlesList from './blog/ArticlesList.svelte';
-	import lightGallery from 'lightgallery';
+	import lightGallery from 'lightgallery/lightgallery.umd';
 
 	// Plugins
-	import lgThumbnail from 'lightgallery/plugins/thumbnail';
-	import lgZoom from 'lightgallery/plugins/zoom';
+	import lgThumbnail from 'lightgallery/plugins/thumbnail/lg-thumbnail.umd';
+	import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.umd';
 
 	// gsap
 	import { gsap } from 'gsap';
