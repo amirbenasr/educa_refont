@@ -18,17 +18,19 @@
 		const closeBtn = document.getElementById('closeBtn');
 		const body = document.body;
 
-		apply.forEach((element) => {
-			element.addEventListener('click', function (e) {
-				favDialog.showModal();
-				body.classList.add('overflow-hidden');
+		if (apply) {
+			apply.forEach((element) => {
+				element.addEventListener('click', function (e) {
+					favDialog.showModal();
+					body.classList.add('overflow-hidden');
+				});
 			});
-		});
+		}
 
-		closeBtn.addEventListener('click', function (e) {
-			body.classList.remove('overflow-hidden');
-			favDialog.close();
-		});
+		// closeBtn.addEventListener('click', function (e) {
+		// 	body.classList.remove('overflow-hidden');
+		// 	favDialog.close();
+		// });
 
 		btnLinks.forEach((element) => {
 			element.addEventListener('click', function (e) {
