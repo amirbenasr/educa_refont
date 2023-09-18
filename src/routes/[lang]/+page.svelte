@@ -2,11 +2,6 @@
 	import { onMount } from 'svelte';
 	import ArticlesList from './blog/ArticlesList.svelte';
 
-	// gsap
-	import { gsap } from 'gsap';
-	import TextPlugin from 'gsap/dist/TextPlugin';
-	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-
 	let index = 0;
 	function counterEffect(element, val) {
 		index++;
@@ -21,13 +16,6 @@
 		});
 	}
 	onMount(() => {
-		// window
-		// 	.$('#lightgallery')
-		// 	.justifiedGallery({})
-		// 	.on('jg.complete', function () {
-		// 		console.log('finished the closure');
-		// 	});
-
 		gsap.registerPlugin(TextPlugin);
 		gsap.registerPlugin(ScrollTrigger);
 
@@ -243,26 +231,26 @@
 				<div class="swiper-slide">
 					<picture>
 						<img src="./assets/img2.webp" alt="" srcset="" />
-						<img src="./assets/img2.jpg" alt="" srcset="" />
+						<!-- <img src="./assets/img2.jpg" alt="" srcset="" /> -->
 					</picture>
 				</div>
 				<div class="swiper-slide">
 					<picture>
 						<img src="./assets/img1.webp" alt="" srcset="" />
-						<img src="./assets/img1.jpg" alt="" srcset="" />
+						<!-- <img src="./assets/img1.jpg" alt="" srcset="" /> -->
 					</picture>
 				</div>
 
 				<div class="swiper-slide">
 					<picture>
 						<img src="./assets/img3.webp" alt="" srcset="" />
-						<img src="./assets/img3.jpg" alt="" srcset="" />
+						<!-- <img src="./assets/img3.jpg" alt="" srcset="" /> -->
 					</picture>
 				</div>
 				<div class="swiper-slide">
 					<picture>
 						<img src="./assets/img4.webp" alt="" srcset="" />
-						<img src="./assets/img4.jpg" alt="" srcset="" />
+						<!-- <img src="./assets/img4.jpg" alt="" srcset="" /> -->
 					</picture>
 				</div>
 			</div>
@@ -445,7 +433,12 @@
 			<div id="lightgallery" class="lightgallery">
 				{#each Array(12) as _, idx}
 					<a href="./gallery/{idx}.webp" data-src="./gallery/{idx}.webp" style="width: 200px;">
-						<img alt="image {idx}" src="./gallery/{idx}.webp" data-src="./gallery/{idx}.webp" />
+						<img
+							alt="image {idx}"
+							src="./gallery/{idx}.webp"
+							data-src="./gallery/{idx}.webp"
+							loading="lazy"
+						/>
 					</a>
 				{/each}
 			</div>
