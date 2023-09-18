@@ -391,7 +391,7 @@
 				</div>
 			</div>
 			<div class="right">
-				<!-- <video
+				<video
 					class="video"
 					style="object-fit: contain; max-width:100% max-height:100%"
 					src="./assets/video.mp4"
@@ -399,7 +399,7 @@
 					muted
 					autoplay
 					controls
-				/> -->
+				/>
 				<!-- <img src="./assets/students_park.jpg" alt="" srcset="" /> -->
 			</div>
 		</section>
@@ -434,6 +434,8 @@
 				{#each Array(12) as _, idx}
 					<a href="./gallery/{idx}.webp" data-src="./gallery/{idx}.webp" style="width: 200px;">
 						<img
+							width="200"
+							height="200"
 							alt="image {idx}"
 							src="./gallery/{idx}.webp"
 							data-src="./gallery/{idx}.webp"
@@ -589,9 +591,7 @@
 		<h1>Our Blog</h1>
 
 		<h2>Latest Articles</h2>
-		<!-- {#await getPosts() then articles} -->
-		<!-- <ArticlesList data="" /> -->
-		<!-- {/await} -->
+		<ArticlesList data="" />
 	</section>
 {/if}
 
