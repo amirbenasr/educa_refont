@@ -391,7 +391,7 @@
 				</div>
 			</div>
 			<div class="right">
-				<video
+				<!-- <video
 					class="video"
 					style="object-fit: contain; max-width:100% max-height:100%"
 					src="./assets/video.mp4"
@@ -399,7 +399,7 @@
 					muted
 					autoplay
 					controls
-				/>
+				/> -->
 				<!-- <img src="./assets/students_park.jpg" alt="" srcset="" /> -->
 			</div>
 		</section>
@@ -590,7 +590,7 @@
 
 		<h2>Latest Articles</h2>
 		<!-- {#await getPosts() then articles} -->
-		<ArticlesList data="" />
+		<!-- <ArticlesList data="" /> -->
 		<!-- {/await} -->
 	</section>
 {/if}
