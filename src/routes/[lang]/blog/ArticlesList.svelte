@@ -28,7 +28,12 @@
 					<a href="/{language}/blog/{article.id}">
 						<div class="ar ticle">
 							<div class="top-section">
-								<img src={article.yoast_head_json.og_image[0]?.url} alt="" srcset="" />
+								<img
+									loading="lazy"
+									src={article.yoast_head_json.og_image[0]?.url}
+									alt=""
+									srcset=""
+								/>
 							</div>
 							<div class="middle-section">
 								<h3>{article.title?.rendered}</h3>
