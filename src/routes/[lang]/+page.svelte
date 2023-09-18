@@ -432,8 +432,8 @@
 		<section>
 			<div id="lightgallery" class="lightgallery">
 				{#each Array(12) as _, idx}
-					<a href="./gallery/{idx}.jpg" data-src="./gallery/{idx}.jpg" style="width: 200px;">
-						<img alt="image {idx}" src="./gallery/{idx}.jpg" data-src="./gallery/{idx}.jpg" />
+					<a href="./gallery/{idx}.webp" data-src="./gallery/{idx}.webp" style="width: 200px;">
+						<img alt="image {idx}" src="./gallery/{idx}.webp" data-src="./gallery/{idx}.webp" />
 					</a>
 				{/each}
 			</div>
