@@ -241,17 +241,29 @@
 		<div class="swiper hero__slider">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<img src="./assets/img2.jpg" alt="" srcset="" />
+					<picture>
+						<img src="./assets/img2.webp" alt="" srcset="" />
+						<img src="./assets/img2.jpg" alt="" srcset="" />
+					</picture>
 				</div>
 				<div class="swiper-slide">
-					<img src="./assets/img1.jpg" alt="" srcset="" />
+					<picture>
+						<img src="./assets/img1.webp" alt="" srcset="" />
+						<img src="./assets/img1.jpg" alt="" srcset="" />
+					</picture>
 				</div>
 
 				<div class="swiper-slide">
-					<img src="./assets/img3.jpg" alt="" srcset="" />
+					<picture>
+						<img src="./assets/img3.webp" alt="" srcset="" />
+						<img src="./assets/img3.jpg" alt="" srcset="" />
+					</picture>
 				</div>
 				<div class="swiper-slide">
-					<img src="./assets/img4.jpg" alt="" srcset="" />
+					<picture>
+						<img src="./assets/img4.webp" alt="" srcset="" />
+						<img src="./assets/img4.jpg" alt="" srcset="" />
+					</picture>
 				</div>
 			</div>
 		</div>
