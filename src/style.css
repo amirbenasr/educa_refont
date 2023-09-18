@@ -47,6 +47,10 @@ body {
 .active {
 	display: block !important;
 }
+/* don't display any video at default size */
+video {
+	display: none;
+}
 .modal {
 	display: none;
 	height: 100%;
@@ -117,6 +121,9 @@ span {
 	}
 }
 @media (width > 800px) {
+	video {
+		display: unset !important;
+	}
 	.lightgallery {
 		width: 600px;
 	}
