@@ -28,6 +28,7 @@
 	"type": "module",
 	"dependencies": {
 		"@inlang/sdk-js": "^0.11.0",
+		"@sveltejs/adapter-vercel": "^3.0.3",
 		"nodemailer": "^6.9.4",
 		"svelte-email": "^0.0.4"
 	}
