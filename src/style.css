@@ -120,7 +120,25 @@ span {
 		margin-left: 0.5rem !important;
 	}
 }
+@media (width < 710px) {
+	.lightgallery {
+		width: 500px;
+	}
+}
+@media screen and (width < 550px) {
+	.lightgallery {
+		width: 400px;
+	}
+}
+@media screen and (width < 450px) {
+	.lightgallery {
+		width: 300px;
+	}
+}
 @media (width > 800px) {
+	.box {
+		position: relative !important;
+	}
 	video {
 		display: unset !important;
 	}
@@ -150,26 +168,22 @@ span {
 		overflow-x: hidden !important;
 		display: flex;
 		flex-direction: row !important;
+		align-items: center;
 		color: white;
 		background: white;
 
 		& .content_wrapper {
+			max-width: 1200px;
 			flex-basis: 50%;
-			overflow: hidden !important;
 			position: relative;
 		}
 		& .hero__content {
-			width: 9375px;
-
 			height: 100%;
-			background-color: var(--primary-color) !important;
+			/* background-color: var(--primary-color) !important; */
 			/* background-image: url('https://img.freepik.com/free-vector/education-pattern-background-doodle-style_53876-115365.jpg?w=740&t=st=1694684155~exp=1694684755~hmac=c2944144e4512c86141745eebcf2acff9387d5398a6cfa4c391f2ffc00477d13'); */
-			background-repeat: repeat-x;
-			background-size: contain;
+			/* background-repeat: repeat-x;
+			background-size: contain; */
 			/* opacity: 0.965; */
-			animation: animatedBackground 25s linear infinite;
-			order: 0 !important;
-			z-index: -1;
 			& h1 {
 				color: white !important;
 				font-size: 3rem;
@@ -177,12 +191,12 @@ span {
 		}
 		.box {
 			width: 80% !important;
-			top: 50%;
+			/* top: 50%; */
 			bottom: unset;
-			left: 0 !important;
+			/* left: 0 !important;
 			right: 0 !important;
-			margin: 0 auto;
-			transform: translateY(-50%);
+			margin: 0 auto; */
+			/* transform: translateY(-50%); */
 		}
 		& .hero__slider {
 			padding: 1rem;
@@ -510,18 +524,13 @@ p {
 }
 
 section.hero {
-	/* z-index: -1; */
 	position: relative;
-	height: calc(100vh - 80px);
+	height: calc(100vh - 108px);
+	height: calc(100svh - 108px);
 	width: 100%;
 	position: relative;
 	text-align: left;
 	padding: 0;
-	/* background-image: url("../assets/students_hero.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
-	/* background: red; */
 }
 
 .hero__slider {
@@ -546,16 +555,10 @@ h1.hero__title {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-
-	position: absolute;
-	bottom: 0;
-	left: 0;
 	color: white;
-	padding-top: 60px;
-	background: white;
-	/* background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent); */
 
-	padding: var(--gap-flex);
+	background: white;
+
 	z-index: 1;
 }
 .box {
@@ -735,43 +738,53 @@ section.stats {
 }
 .flex-z {
 	display: flex;
+	flex-direction: column;
 	gap: 0.5rem;
-	align-items: center;
 }
 .stats__list {
 	height: min-content;
 	margin-bottom: 1rem;
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	display: flex;
+	gap: 0.2rem;
+	/* display: grid; */
+	/* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
 	/* grid-template-columns: 1fr 1fr; */
-	gap: 1rem;
-	margin-top: var(--space-y);
+	/* gap: 1rem; */
+	/* margin-top: var(--space-y); */
 
 	& > *::after {
 		display: block;
 		position: absolute;
 		content: '';
 	}
+	& > * {
+		flex: 1;
+	}
+}
+.text-content p {
+	min-height: 4rem;
 }
 .stats__card {
 	opacity: 0;
 	transition: all 500ms;
 	background: transparent;
-	margin-top: 1rem;
 	display: flex;
-	padding: 5px;
+	padding: 3px;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
 	border: 1px solid white;
-	border-bottom: 8px solid var(--secondary-color);
+	border-bottom: 4px solid var(--secondary-color);
 	border-bottom-left-radius: 10%;
-	border-bottom-right-radius: 10%;
+	/* border-bottom-right-radius: 10%; */
 	&:hover {
 		cursor: pointer;
 		background: red;
 		transform: translateY(-5px) !important;
+	}
+	& p {
+		font-size: small;
+		padding-block: 0 !important;
 	}
 }
 

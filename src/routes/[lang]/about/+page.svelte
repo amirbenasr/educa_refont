@@ -8,7 +8,7 @@
 <Layout title="About" img="../assets/mentor.png">
 	<!-- Main Content -->
 	<div class="container">
-		<img src="./assets/mentor.png" alt="" srcset="" />
+		<!-- <img src="../assets/mentor.png" alt="" srcset="" /> -->
 		<!-- Section 1: Introduction -->
 		<section>
 			<h2>Who We Are</h2>

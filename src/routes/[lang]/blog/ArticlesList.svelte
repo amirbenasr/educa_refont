@@ -2,25 +2,23 @@
 	import { Convert } from '$lib/articles';
 	import type { Article } from '$lib/articles';
 	import { language } from '@inlang/sdk-js';
-	import { onMount } from 'svelte';
 	/** @type {import('./$types').PageData} */
 
-	export let data;
 	export let excludeId = '';
 	const url = 'https://wordpress.educaus.net/index.php/wp-json/wp/v2/posts?exclude=' + excludeId;
-	let articles: Article[] = [];
 
 	const getPosts = async () => {
 		let response;
 		response = JSON.stringify(await (await fetch(url)).json());
-		articles = Convert.toArticles(response);
-		return articles;
+		return Convert.toArticles(response);
 	};
+	// let articles: Article[] = [];
+	let promise = getPosts();
 </script>
 
 <div class="articles">
 	<ul>
-		{#await getPosts()}
+		{#await promise}
 			Loading...
 		{:then articles}
 			{#each articles as article, i}

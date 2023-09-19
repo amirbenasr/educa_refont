@@ -147,8 +147,9 @@
 			.$('#lightgallery')
 			.justifiedGallery({
 				captions: false,
+
 				lastRow: 'hide',
-				rowHeight: 150,
+				rowHeight: 120,
 				margins: 5
 			})
 			.on('jg.complete', function () {
@@ -163,8 +164,7 @@
 		// counter animation
 
 		const textElement = document.querySelector('.hero__subtitle');
-		const text =
-			'Discover Limitless  <br /> Opportunities <br /> for Travel and  <br /> Education in the USA';
+		const text = 'Discover Limitless Opportunities for Travel and Education in the USA';
 
 		gsap.to(textElement, {
 			text: {

@@ -8,19 +8,6 @@
 	import Layout from '$lib/components/Layout.svelte';
 	/** @type {import('./$types').PageData} */
 	export let data;
-	const url = 'https://wordpress.educaus.net/index.php/wp-json/wp/v2/posts';
-	let articles: Article[] = [];
-
-	const getPosts = async () => {
-		let response;
-		response = JSON.stringify(await (await fetch(url)).json());
-		articles = Convert.toArticles(response);
-		return articles;
-	};
-
-	onMount(() => {
-		getPosts();
-	});
 </script>
 
 <Layout img="../assets/blog.jpg" title="Blog">
