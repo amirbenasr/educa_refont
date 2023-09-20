@@ -15,6 +15,7 @@
 			}
 		});
 	}
+
 	onMount(() => {
 		gsap.registerPlugin(TextPlugin);
 		gsap.registerPlugin(ScrollTrigger);
@@ -32,7 +33,16 @@
 			// markers: true,
 			start: 'top 50%',
 			onEnter: () => {
-				tl_staggered.play();
+				tl_staggered.add(counterEffect(n_s, 700)).restart();
+			}
+		});
+
+		const factsTrigger = ScrollTrigger.create({
+			trigger: 'section.facts',
+			// markers: true,
+			start: 'top top%',
+			onEnter: () => {
+				factsAnimation.play();
 			}
 		});
 		// creating timelines
@@ -52,7 +62,25 @@
 		// creating Gallery timeline
 
 		const galleryImages = document.querySelectorAll('.lightgallery a');
+		// const factsCard = document.querySelectorAll('.facts__card');
 
+		// factsCard.forEach((element) => {
+
+		// })
+		const factsAnimation = gsap.fromTo(
+			'.facts__card',
+			{ opacity: 0, x: '-100%' },
+			{
+				// scale: 0.1,
+				paused: true,
+				x: '0',
+				opacity: 1,
+				ease: 'power1.inOut',
+				stagger: {
+					amount: 1.5
+				}
+			}
+		);
 		galleryImages.forEach((img, ix) => {
 			tl_gallery.fromTo(img, { opacity: 0 }, { x: 15, opacity: 1, duration: 0.09 });
 		});
@@ -60,6 +88,10 @@
 		const listItems = document.querySelectorAll('.offer__card');
 
 		// offers timeline
+		tl_offers
+			.fromTo('.left h1', { opacity: 0, x: '-100px' }, { opacity: 1, x: '0' })
+			.fromTo('.left p', { opacity: 0, x: '-100px' }, { opacity: 1, x: '0' });
+
 		listItems.forEach((element, ix) => {
 			tl_offers.fromTo(
 				element,
@@ -109,6 +141,7 @@
 		// create animations using timeline
 		const textContainer = document.querySelector('.text-content');
 		const animatedText = document.querySelector('.animated-text');
+		let bg = document.querySelector('.bg-anim::before');
 
 		let n_s = document.getElementById('n_s');
 		let n_r = document.getElementById('n_r');
@@ -136,13 +169,30 @@
 					);
 				});
 			})
+			.add(() => {
+				tl_hero.fromTo(
+					'.bg-anim',
+					1.5,
+					{
+						backgroundColor: 'transparent',
+						height: '0%',
+						width: '0%',
+						duration: 0.5
+					},
+					{
+						backgroundColor: 'var(--secondary-color)',
+						height: '100%',
+						width: '100%',
+						duration: 0.5,
+						delay: 0.5
+					}
+				);
+			})
 			.add(counterEffect(n_s, 700))
 			.add(counterEffect(n_r, 99))
-			.add(counterEffect(n_u, 30));
-	});
-	// text machine animation
-	// script.js
-	onMount(() => {
+			.add(counterEffect(n_u, 30))
+			.fromTo('#apply', { opacity: 0, y: '-100px' }, { opacity: 1, y: '0' }, '>=1');
+
 		window
 			.$('#lightgallery')
 			.justifiedGallery({
@@ -175,6 +225,8 @@
 			ease: 'power1.inOut'
 		});
 	});
+	// text machine animation
+	// script.js
 </script>
 
 <head>
@@ -196,7 +248,10 @@
 						<div class="text-content">
 							<div class="animated-text">
 								<h1 class="hero__title">
-									Unlock Your <br /> American Dream <br /> with Educa US
+									Unlock Your <br /> American Dream <br /> with
+									<span style="position: relative;">
+										Educa US <div class="bg-anim" /></span
+									>
 								</h1>
 
 								<p class="hero__subtitle" />
