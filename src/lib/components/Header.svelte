@@ -21,8 +21,8 @@
 		if (apply) {
 			apply.forEach((element) => {
 				element.addEventListener('click', function (e) {
-					favDialog.showModal();
-					body.classList.add('overflow-hidden');
+					// favDialog.showModal();
+					// body.classList.add('overflow-hidden');
 				});
 			});
 		}
