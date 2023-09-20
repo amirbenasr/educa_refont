@@ -7,7 +7,7 @@
 		index++;
 		gsap.to(element, {
 			innerText: val,
-			duration: 1,
+			duration: 8,
 			ease: 'linear',
 			delay: 0.5 + index,
 			snap: {
@@ -154,7 +154,6 @@
 		const textElement = document.querySelector('.hero__subtitle');
 		const text = 'Discover Limitless Opportunities for Travel and Education in the USA';
 		tl_hero
-
 			.fromTo(
 				'.box',
 				{ y: '-100px', opacity: 0, duration: 1.5, display: 'none' },
