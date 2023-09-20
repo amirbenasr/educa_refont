@@ -138,6 +138,7 @@ span {
 @media (width > 800px) {
 	.box {
 		position: relative !important;
+		display: none;
 	}
 	video {
 		display: unset !important;

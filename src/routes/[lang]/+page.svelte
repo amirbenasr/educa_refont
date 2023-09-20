@@ -46,7 +46,9 @@
 			}
 		});
 		// creating timelines
-		const tl_hero = gsap.timeline({});
+		const tl_hero = gsap.timeline({
+			paused: true
+		});
 
 		const tl_staggered = gsap.timeline({});
 
@@ -147,9 +149,29 @@
 		let n_r = document.getElementById('n_r');
 		let n_u = document.getElementById('n_u');
 
+		// counter animation
+
+		const textElement = document.querySelector('.hero__subtitle');
+		const text = 'Discover Limitless Opportunities for Travel and Education in the USA';
 		tl_hero
+
+			.fromTo(
+				'.box',
+				{ y: '-100px', opacity: 0, duration: 1.5, display: 'none' },
+				{ y: '0', opacity: 1, duration: 1.5, display: 'unset' }
+			)
 			.from(textContainer, { opacity: 0, duration: 0.5, ease: 'power2.inOut' })
-			.from(animatedText, { y: 50, opacity: 0, duration: 0.5, ease: 'power2.out' }) // Staggered Button Animation
+			.from(animatedText, { y: 50, opacity: 0, duration: 0.5, ease: 'power2.out' })
+			.add(() => {
+				gsap.to(textElement, {
+					text: {
+						value: text,
+						delimiter: ''
+					},
+					duration: 3, // Adjust the typing speed
+					ease: 'power1.inOut'
+				});
+			}) // Staggered Button Animation
 			.add(() => {
 				const buttons = document.querySelectorAll('.stats__card');
 
@@ -192,6 +214,9 @@
 			.add(counterEffect(n_r, 99))
 			.add(counterEffect(n_u, 30))
 			.fromTo('#apply', { opacity: 0, y: '-100px' }, { opacity: 1, y: '0' }, '>=1');
+		setTimeout(() => {
+			tl_hero.play();
+		}, 1000);
 
 		window
 			.$('#lightgallery')
@@ -210,20 +235,6 @@
 					speed: 500
 				});
 			});
-
-		// counter animation
-
-		const textElement = document.querySelector('.hero__subtitle');
-		const text = 'Discover Limitless Opportunities for Travel and Education in the USA';
-
-		gsap.to(textElement, {
-			text: {
-				value: text,
-				delimiter: ''
-			},
-			duration: 3, // Adjust the typing speed
-			ease: 'power1.inOut'
-		});
 	});
 	// text machine animation
 	// script.js
