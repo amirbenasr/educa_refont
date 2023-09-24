@@ -27,7 +27,7 @@ export const actions = {
 		});
 		const options = {
 			from: 'contact@educaus.net',
-			to: 'contact@educaus.net',
+			to: 'contact@arlington-high.com',
 			subject: 'Contact Inquiry',
 			html: emailHtml
 		};
