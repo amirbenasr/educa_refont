@@ -213,9 +213,9 @@
 			.add(counterEffect(n_r, 99))
 			.add(counterEffect(n_u, 30))
 			.fromTo('#apply', { opacity: 0, y: '-100px' }, { opacity: 1, y: '0' }, '>=1');
-		setTimeout(() => {
-			tl_hero.play();
-		}, 1000);
+		// setTimeout(() => {
+		tl_hero.play();
+		// }, 1000);
 
 		window
 			.$('#lightgallery')

@@ -857,6 +857,7 @@ footer {
 	background: #f4f9ff;
 	color: var(--primary-color);
 	padding: 0;
+	padding-bottom: 1rem;
 	margin: 0 auto;
 }
 .footer {
