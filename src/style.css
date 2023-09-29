@@ -858,12 +858,11 @@ footer {
 	color: var(--primary-color);
 	padding: 0;
 	margin: 0 auto;
-	margin-bottom: 1rem !important;
+	padding-bottom: 5rem;
 }
 .footer {
 	background: var(--primary-color);
 	background: #f4f9ff;
-
 	display: flex;
 	flex-wrap: wrap;
 	align-items: start;
