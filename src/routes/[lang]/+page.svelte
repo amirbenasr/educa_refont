@@ -210,7 +210,7 @@
 				);
 			})
 			.add(counterEffect(n_s, 700))
-			.add(counterEffect(n_r, 99))
+			.add(counterEffect(n_r, 96))
 			.add(counterEffect(n_u, 30))
 			.fromTo('#apply', { opacity: 0, y: '-100px' }, { opacity: 1, y: '0' }, '>=1');
 		// setTimeout(() => {
@@ -537,7 +537,7 @@
 						<p>Agency in Tunisia</p>
 					</div>
 					<div class="stats__card">
-						<h2>99%</h2>
+						<h2>96%</h2>
 						<p>Visa Approval Rate</p>
 					</div>
 					<div class="stats__card">
