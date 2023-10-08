@@ -165,6 +165,7 @@ span {
 		}
 	}
 	section.hero {
+		margin-block: 1rem;
 		/* width: 100%; */
 		overflow-x: hidden !important;
 		display: flex;
@@ -200,7 +201,7 @@ span {
 			/* transform: translateY(-50%); */
 		}
 		& .hero__slider {
-			padding: 1rem;
+			/* padding: 1rem; */
 			min-width: unset !important;
 			flex-basis: 40% !important;
 			position: relative;
@@ -215,7 +216,7 @@ span {
 				position: absolute;
 				top: 20px;
 				left: 0;
-				border: 5px solid #57423f;
+				/* border: 5px solid #57423f; */
 				box-shadow: -13px 1px 7px -1px rgba(67, 105, 187, 0.17);
 				-webkit-box-shadow: -13px 1px 7px -1px rgba(67, 105, 187, 0.17);
 				-moz-box-shadow: -13px 1px 7px -1px rgba(67, 105, 187, 0.17);

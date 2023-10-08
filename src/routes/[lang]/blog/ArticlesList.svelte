@@ -5,7 +5,7 @@
 	/** @type {import('./$types').PageData} */
 
 	export let excludeId = '';
-	const url = 'https://wordpress.educaus.net/index.php/wp-json/wp/v2/posts?exclude=' + excludeId;
+	const url = 'http://wordpress.educaus.net/index.php/wp-json/wp/v2/posts?exclude=' + excludeId;
 
 	const getPosts = async () => {
 		let response;

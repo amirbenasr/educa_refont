@@ -118,7 +118,8 @@
 			autoplay: {
 				delay: 5000
 			},
-			centeredSlides: true
+			spaceBetween: '0px',
+			centeredSlides: null
 		});
 		const swiper2 = new Swiper('.testimonials__slider', {
 			autoplay: {
