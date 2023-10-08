@@ -136,9 +136,17 @@ span {
 	}
 }
 @media (width > 800px) {
+	.stats__card {
+		background: var(--secondary-color) !important;
+		color: white !important;
+	}
+	.flex-z {
+		color: rgb(24, 24, 24) !important;
+	}
 	.box {
 		position: relative !important;
 		display: none;
+		background: unset !important;
 	}
 	video {
 		display: unset !important;
@@ -153,7 +161,7 @@ span {
 		display: block !important;
 	}
 	.blue {
-		background: var(--primary-color) !important;
+		/* background: var(--primary-color) !important; */
 		opacity: 0.95 !important;
 	}
 	@keyframes animatedBackground {
@@ -181,25 +189,13 @@ span {
 		}
 		& .hero__content {
 			height: 100%;
-			/* background-color: var(--primary-color) !important; */
-			/* background-image: url('https://img.freepik.com/free-vector/education-pattern-background-doodle-style_53876-115365.jpg?w=740&t=st=1694684155~exp=1694684755~hmac=c2944144e4512c86141745eebcf2acff9387d5398a6cfa4c391f2ffc00477d13'); */
-			/* background-repeat: repeat-x;
-			background-size: contain; */
-			/* opacity: 0.965; */
+
 			& h1 {
 				color: white !important;
 				font-size: 3rem;
 			}
 		}
-		.box {
-			width: 80% !important;
-			/* top: 50%; */
-			bottom: unset;
-			/* left: 0 !important;
-			right: 0 !important;
-			margin: 0 auto; */
-			/* transform: translateY(-50%); */
-		}
+
 		& .hero__slider {
 			/* padding: 1rem; */
 			min-width: unset !important;
@@ -561,6 +557,10 @@ section.hero {
 }
 h1.hero__title {
 	font-weight: 900;
+
+	& span {
+		color: white;
+	}
 }
 
 .hero__content {
@@ -583,7 +583,9 @@ h1.hero__title {
 	background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
 	z-index: 5;
 }
-
+#apply {
+	background: var(--secondary-color);
+}
 a.btn {
 	display: block;
 	width: fit-content !important;
@@ -753,6 +755,7 @@ section.stats {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
+	color: white;
 }
 .stats__list {
 	height: min-content;
@@ -790,6 +793,7 @@ section.stats {
 	border-bottom: 4px solid var(--secondary-color);
 	border-bottom-left-radius: 10%;
 	/* border-bottom-right-radius: 10%; */
+	color: white;
 	&:hover {
 		cursor: pointer;
 		background: red;
