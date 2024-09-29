@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+		/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+		<link
+			rel="preload"
+			id="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
+		/>
+		<noscript>
+			<link
+				rel="stylesheet"
+				href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+				integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+				crossorigin="anonymous"
+				referrerpolicy="no-referrer"
+			/>
+		</noscript>
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery-bundle.min.css"
+			integrity="sha512-nUqPe0+ak577sKSMThGcKJauRI7ENhKC2FQAOOmdyCYSrUh0GnwLsZNYqwilpMmplN+3nO3zso8CWUgu33BDag=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.css"
+		/>
+		<meta name="viewport" content="width=device-width" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div id="fb-root"></div>
+		<!-- Your Plugin de discussion code -->
+		<div id="fb-customer-chat" class="fb-customerchat"></div>
+		<!-- <script>
+			var chatbox = document.getElementById('fb-customer-chat');
+			chatbox.setAttribute('page_id', '106274557824503');
+			chatbox.setAttribute('attribution', 'biz_inbox');
+		</script> -->
+		<!-- Your SDK code -->
+		<script>
+			// window.fbAsyncInit = function () {
+			// 	FB.init({
+			// 		xfbml: true,
+			// 		version: 'v17.0'
+			// 	});
+			// };
+			// (function (d, s, id) {
+			// 	var js,
+			// 		fjs = d.getElementsByTagName(s)[0];
+			// 	if (d.getElementById(id)) return;
+			// 	js = d.createElement(s);
+			// 	js.id = id;
+			// 	js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+			// 	fjs.parentNode.insertBefore(js, fjs);
+			// })(document, 'script', 'facebook-jssdk');
+		</script>
+
+		<div style="display: contents">%sveltekit.body%</div>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/lightgallery.umd.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/plugins/zoom/lg-zoom.umd.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+		<script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/tgs-player.js"></script>
+	</body>
+</html>
