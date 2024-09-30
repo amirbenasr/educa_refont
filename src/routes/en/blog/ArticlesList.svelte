@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Convert } from '$lib/articles';
 	import type { Article } from '$lib/articles';
-	import { language } from '@inlang/sdk-js';
 	/** @type {import('./$types').PageData} */
 
 	export let excludeId = '';
@@ -23,7 +22,7 @@
 		{:then articles}
 			{#each articles as article, i}
 				<li>
-					<a href="/{language}/blog/{article.id}">
+					<a href="/en/blog/{article.id}">
 						<div class="ar ticle">
 							<div class="top-section">
 								<img

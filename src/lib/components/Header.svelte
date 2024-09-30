@@ -1,5 +1,4 @@
 <script>
-	import { language, languages, switchLanguage } from '@inlang/sdk-js';
 	import { onMount } from 'svelte';
 	let buttonMenu;
 	let navMobile;
@@ -80,12 +79,12 @@
 			</div>
 			<div class="desktop-nav">
 				<ul>
-					<a href="/"> <li>Home</li> </a><a href="/{language}/about"> <li>About</li> </a><a
-						href="/{language}/contact"
+					<a href="/"> <li>Home</li> </a><a href="/en/about"> <li>About</li> </a><a
+						href="/en/contact"
 					>
 						<li>Contact</li>
 					</a>
-					<a href="/{language}/blog">
+					<a href="/en/blog">
 						<li>Blog</li>
 					</a>
 				</ul>
@@ -99,12 +98,12 @@
 				</a>
 				<div class="mobile-nav" bind:this={navMobile}>
 					<ul>
-						<a href="/"> <li>Home</li> </a><a href="/{language}/about"> <li>About</li> </a><a
-							href="/{language}/contact"
+						<a href="/"> <li>Home</li> </a><a href="/en/about"> <li>About</li> </a><a
+							href="/en/contact"
 						>
 							<li>Contact</li>
 						</a>
-						<a href="/{language}/blog">
+						<a href="/en/blog">
 							<li>Blog</li>
 						</a>
 					</ul>

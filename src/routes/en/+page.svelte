@@ -7,9 +7,6 @@
 	import Swiper from 'swiper';
 	import ComponentX from '$lib/components/ComponentX.svelte';
 
-	gsap.registerPlugin(ScrollTrigger);
-	gsap.registerPlugin(TextPlugin);
-
 	let index = 0;
 	function counterEffect(element: any, val: any) {
 		index++;
@@ -25,6 +22,8 @@
 	}
 
 	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+		gsap.registerPlugin(TextPlugin);
 		// create scrolltriggers
 		const offerTrigger = ScrollTrigger.create({
 			// markers: true,
