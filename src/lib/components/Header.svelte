@@ -72,7 +72,7 @@
 							toggleMenu(e);
 						}
 					}}
-					href="/"
+					href="/en"
 				>
 					<img src="/assets/logo.svg" alt="" srcset="" />
 				</a>
@@ -98,7 +98,7 @@
 				</a>
 				<div class="mobile-nav" bind:this={navMobile}>
 					<ul>
-						<a href="/"> <li>Home</li> </a><a href="/en/about"> <li>About</li> </a><a
+						<a href="/en"> <li>Home</li> </a><a href="/en/about"> <li>About</li> </a><a
 							href="/en/contact"
 						>
 							<li>Contact</li>
