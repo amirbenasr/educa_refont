@@ -3,7 +3,6 @@
 
 	import { Convert } from '$lib/articles';
 	import type { Article } from '$lib/articles';
-	import { language } from '@inlang/sdk-js';
 	import { onMount } from 'svelte';
 	import Layout from '$lib/components/Layout.svelte';
 	/** @type {import('./$types').PageData} */
