@@ -4,9 +4,11 @@
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { TextPlugin } from 'gsap/dist/TextPlugin';
+	import Swiper from 'swiper';
+	import ComponentX from '$lib/components/ComponentX.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
-	gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(TextPlugin);
 
 	let index = 0;
 	function counterEffect(element: any, val: any) {
@@ -122,7 +124,7 @@
 				delay: 5000
 			},
 			spaceBetween: '0px',
-			centeredSlides: null
+			centeredSlides: undefined
 		});
 		const swiper2 = new Swiper('.testimonials__slider', {
 			autoplay: {
@@ -251,79 +253,42 @@
 
 <section class="hero">
 	<div class="content_wrapper">
-		<div class="hero__content" />
+		<!-- <div class="hero__content" /> -->
 
-		<div class="flex-col">
-			<div class="box blue">
-				<div class="flex-z">
-					<div class="text-content">
-						<div class="animated-text">
-							<h1 class="hero__title">
-								Unlock Your <br /> American Dream <br /> with
-								<span style="position: relative;">
-									Educa US <div class="bg-anim" /></span
-								>
-							</h1>
-
-							<p class="hero__subtitle" />
-						</div>
-					</div>
-					<div class="stats__list">
-						<div class="stats__card">
-							<h2><span id="n_s" />+</h2>
-							<p>Students in USA</p>
-						</div>
-						<div class="stats__card">
-							<h2>#1</h2>
-							<p>Agency in Tunisia</p>
-						</div>
-						<div class="stats__card">
-							<h2><span id="n_r">0</span>%</h2>
-							<p>Visa Approval Rate</p>
-						</div>
-						<div class="stats__card">
-							<h2><span id="n_u">0</span>+</h2>
-							<p>universities</p>
-						</div>
-					</div>
+		<ComponentX />
+		<div class="swiper hero__slider">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<picture>
+						<img src="./assets/img2.webp" alt="" srcset="" />
+						<!-- <img src="./assets/img2.jpg" alt="" srcset="" /> -->
+					</picture>
+				</div>
+				<div class="swiper-slide">
+					<picture>
+						<img src="./assets/img1.webp" alt="" srcset="" />
+						<!-- <img src="./assets/img1.jpg" alt="" srcset="" /> -->
+					</picture>
 				</div>
 
-				<a id="apply" class="btn" href="en/contact">Contact Us</a>
-			</div>
-		</div>
-	</div>
-	<div class="swiper hero__slider">
-		<div class="swiper-wrapper">
-			<div class="swiper-slide">
-				<picture>
-					<img src="./assets/img2.webp" alt="" srcset="" />
-					<!-- <img src="./assets/img2.jpg" alt="" srcset="" /> -->
-				</picture>
-			</div>
-			<div class="swiper-slide">
-				<picture>
-					<img src="./assets/img1.webp" alt="" srcset="" />
-					<!-- <img src="./assets/img1.jpg" alt="" srcset="" /> -->
-				</picture>
-			</div>
-
-			<div class="swiper-slide">
-				<picture>
-					<img src="./assets/img3.webp" alt="" srcset="" />
-					<!-- <img src="./assets/img3.jpg" alt="" srcset="" /> -->
-				</picture>
-			</div>
-			<div class="swiper-slide">
-				<picture>
-					<img src="./assets/img4.webp" alt="" srcset="" />
-					<!-- <img src="./assets/img4.jpg" alt="" srcset="" /> -->
-				</picture>
+				<div class="swiper-slide">
+					<picture>
+						<img src="./assets/img3.webp" alt="" srcset="" />
+						<!-- <img src="./assets/img3.jpg" alt="" srcset="" /> -->
+					</picture>
+				</div>
+				<div class="swiper-slide">
+					<picture>
+						<img src="./assets/img4.webp" alt="" srcset="" />
+						<!-- <img src="./assets/img4.jpg" alt="" srcset="" /> -->
+					</picture>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section class="facts">
+<!-- <section class="facts">
 	<div class="facts__list">
 		<div class="facts__card">
 			<div class="logo">
@@ -367,7 +332,7 @@
 			</p>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <div class="offer_wrapper">
 	<section class="offer container">

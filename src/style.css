@@ -51,6 +51,7 @@ body {
 video {
 	display: none !important;
 }
+
 .modal {
 	display: none;
 	height: 100%;
@@ -172,6 +173,9 @@ span {
 			transform: translate(-900px); /* The image width */
 		}
 	}
+	.component-x {
+		width: 60% !important;
+	}
 	section.hero {
 		margin-block: 1rem;
 		/* width: 100%; */
@@ -183,13 +187,13 @@ span {
 		background: white;
 
 		& .content_wrapper {
+			display: flex;
 			max-width: 1200px;
-			flex-basis: 50%;
 			position: relative;
+			height: inherit;
 		}
 		& .hero__content {
 			height: 100%;
-
 			& h1 {
 				color: white !important;
 				font-size: 3rem;
@@ -198,8 +202,7 @@ span {
 
 		& .hero__slider {
 			/* padding: 1rem; */
-			min-width: unset !important;
-			flex-basis: 40% !important;
+			width: 500px;
 			position: relative;
 
 			&::after {
@@ -546,11 +549,10 @@ section.hero {
 	position: relative;
 	height: 1px;
 	width: 1px;
-	min-height: 100%;
-	min-width: 100%;
+
 	& img {
 		/* display: block !important; */
-		width: 100%;
+		/* width: 100%; */
 		height: 100%;
 		object-fit: cover;
 	}
@@ -838,7 +840,7 @@ section.stats {
 }
 .swiper {
 	width: auto;
-	height: 250px;
+	height: auto;
 }
 .testimonials {
 	position: relative;

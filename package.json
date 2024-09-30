@@ -12,8 +12,8 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.1.1",
-		"@sveltejs/kit": "^1.30.4",
+		"@sveltejs/adapter-auto": "^3.2.5",
+		"@sveltejs/kit": "^2.5.28",
 		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^8.10.0",
 		"eslint-plugin-svelte": "^2.44.1",
@@ -23,14 +23,14 @@
 		"svelte-check": "^3.8.6",
 		"svelte-loading-spinners": "^0.3.6",
 		"typescript": "^5.6.2",
-		"vite": "^4.5.5"
+		"vite": "^5.0.3"
 	},
 	"type": "module",
 	"dependencies": {
-		"@inlang/sdk-js": "^0.11.8",
-		"@sveltejs/adapter-vercel": "^3.1.0",
+		"@sveltejs/adapter-vercel": "^5.4.4",
 		"gsap": "^3.12.5",
 		"nodemailer": "^6.9.15",
-		"svelte-email": "^0.0.4"
+		"svelte-email": "^0.0.4",
+		"swiper": "^11.1.14"
 	}
 }
