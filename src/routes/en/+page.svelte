@@ -238,11 +238,30 @@
 	// script.js
 </script>
 
-<head>
+<svelte:head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Educa US - Study in the USA</title>
-</head>
+
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:title" content="Study in the USA with Educa US - Tunisia's #1 Agency" />
+	<meta
+		property="og:description"
+		content="Educa US helps Tunisian students unlock opportunities to study in the USA with top universities, high visa approval rates, and expert guidance."
+	/>
+
+	<!-- SEO Meta Tags -->
+	<meta
+		name="description"
+		content="Educa US helps Tunisian students unlock opportunities to study in the USA with top universities, high visa approval rates, and expert guidance."
+	/>
+	<meta
+		name="keywords"
+		content="Study in the USA, Tunisia, Visa Success, Top Universities, Educa US"
+	/>
+
+	<!-- Document Title -->
+	<title>Study in the USA with Educa US - Tunisia's #1 Agency for Visa Success</title>
+</svelte:head>
 
 <!-- <div class="content_wrapper"> -->
 <!-- <div class="hero__content" /> -->
