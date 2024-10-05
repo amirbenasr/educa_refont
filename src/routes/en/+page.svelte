@@ -6,9 +6,10 @@
 	import { TextPlugin } from 'gsap/dist/TextPlugin';
 	import Swiper from 'swiper';
 	import ComponentX from '$lib/components/ComponentX.svelte';
-
+	import Slider from '$lib/components/Slider.svelte';
+	import ContentWrapper from '$lib/components/ContentWrapper.svelte';
 	let index = 0;
-	function counterEffect(element: any, val: any) {
+	function counterEffect(element: any, val: any): any {
 		index++;
 		gsap.to(element, {
 			innerText: val,
@@ -118,13 +119,6 @@
 
 		// init swiper
 
-		const swiper = new Swiper('.hero__slider', {
-			autoplay: {
-				delay: 5000
-			},
-			spaceBetween: '0px',
-			centeredSlides: undefined
-		});
 		const swiper2 = new Swiper('.testimonials__slider', {
 			autoplay: {
 				delay: 3000
@@ -222,7 +216,7 @@
 		tl_hero.play();
 		// }, 1000);
 
-		window
+		(window as any)
 			.$('#lightgallery')
 			.justifiedGallery({
 				captions: false,
@@ -234,7 +228,7 @@
 			.on('jg.complete', function () {
 				(window as any).lightGallery(document.getElementById('lightgallery')!, {
 					download: false,
-					plugins: [window.lgZoom, window.lgThumbnail],
+					plugins: [(window as any).lgZoom, (window as any).lgThumbnail],
 					width: '500px',
 					speed: 500
 				});
@@ -250,42 +244,14 @@
 	<title>Educa US - Study in the USA</title>
 </head>
 
-<section class="hero">
-	<div class="content_wrapper">
-		<!-- <div class="hero__content" /> -->
+<!-- <div class="content_wrapper"> -->
+<!-- <div class="hero__content" /> -->
 
-		<ComponentX />
-		<div class="swiper hero__slider">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<picture>
-						<img src="./assets/img2.webp" alt="" srcset="" />
-						<!-- <img src="./assets/img2.jpg" alt="" srcset="" /> -->
-					</picture>
-				</div>
-				<div class="swiper-slide">
-					<picture>
-						<img src="./assets/img1.webp" alt="" srcset="" />
-						<!-- <img src="./assets/img1.jpg" alt="" srcset="" /> -->
-					</picture>
-				</div>
-
-				<div class="swiper-slide">
-					<picture>
-						<img src="./assets/img3.webp" alt="" srcset="" />
-						<!-- <img src="./assets/img3.jpg" alt="" srcset="" /> -->
-					</picture>
-				</div>
-				<div class="swiper-slide">
-					<picture>
-						<img src="./assets/img4.webp" alt="" srcset="" />
-						<!-- <img src="./assets/img4.jpg" alt="" srcset="" /> -->
-					</picture>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+<ContentWrapper>
+	<ComponentX />
+	<Slider />
+</ContentWrapper>
+<!-- </div> -->
 
 <!-- <section class="facts">
 	<div class="facts__list">

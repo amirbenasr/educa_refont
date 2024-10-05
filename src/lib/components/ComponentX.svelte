@@ -38,3 +38,14 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.component-x {
+		width: auto;
+	}
+	@media (width > 800px) {
+		.component-x {
+			width: 50%;
+		}
+	}
+</style>

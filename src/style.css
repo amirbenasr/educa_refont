@@ -8,6 +8,7 @@
 	--space-y: 2rem;
 	--swiper-pagination-color: #334a73;
 }
+
 *,
 html,
 body {
@@ -173,55 +174,7 @@ span {
 			transform: translate(-900px); /* The image width */
 		}
 	}
-	.component-x {
-		width: 60% !important;
-	}
-	section.hero {
-		margin-block: 1rem;
-		/* width: 100%; */
-		overflow-x: hidden !important;
-		display: flex;
-		flex-direction: row !important;
-		align-items: center;
-		color: white;
-		background: white;
 
-		& .content_wrapper {
-			display: flex;
-			max-width: 1200px;
-			position: relative;
-			height: inherit;
-		}
-		& .hero__content {
-			height: 100%;
-			& h1 {
-				color: white !important;
-				font-size: 3rem;
-			}
-		}
-
-		& .hero__slider {
-			/* padding: 1rem; */
-			width: 500px;
-			position: relative;
-
-			&::after {
-				pointer-events: none;
-				content: '';
-				height: 90%;
-				width: 90%;
-				z-index: 1;
-				/* padding: 2rem; */
-				position: absolute;
-				top: 20px;
-				left: 0;
-				/* border: 5px solid #57423f; */
-				box-shadow: -13px 1px 7px -1px rgba(67, 105, 187, 0.17);
-				-webkit-box-shadow: -13px 1px 7px -1px rgba(67, 105, 187, 0.17);
-				-moz-box-shadow: -13px 1px 7px -1px rgba(67, 105, 187, 0.17);
-			}
-		}
-	}
 	.menu {
 		display: none;
 	}
@@ -838,10 +791,7 @@ section.stats {
 	height: 60px;
 	opacity: 0.1;
 }
-.swiper {
-	width: auto;
-	height: auto;
-}
+
 .testimonials {
 	position: relative;
 	text-align: center;

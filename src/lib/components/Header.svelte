@@ -40,29 +40,6 @@
 </script>
 
 <header>
-	<div class="banner container">
-		<!-- <div class="logo">
-  <img src="./assets/logo.png" alt="" srcset="" />
-</div> -->
-		<div class="form-group">
-			<div class="email__form">
-				<i class="fa-envelope fa-solid fa-md" />
-
-				<span class="contact">
-					Email
-					<a href="mailto:contact@educaus.fa-net">contact@educaus.net</a>
-				</span>
-			</div>
-
-			<div class="phone__form">
-				<i class="fa-phone fa-solid fa-md" />
-
-				<span class="contact">
-					Call<a href="tel:+21655961771">55961771</a>
-				</span>
-			</div>
-		</div>
-	</div>
 	<div class="nav_wrapper">
 		<nav class="container">
 			<div class="logo">

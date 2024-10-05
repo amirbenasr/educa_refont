@@ -13,6 +13,7 @@
 	<section class="blog">
 		<h1>Our Blog</h1>
 
+
 		<h2>Latest Articles</h2>
 		<!-- {#await getPosts() then articles} -->
 		<ArticlesList />
