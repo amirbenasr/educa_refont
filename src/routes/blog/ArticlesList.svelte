@@ -22,7 +22,7 @@
 		{:then articles}
 			{#each articles as article, i}
 				<li>
-					<a href="/en/blog/{article.id}">
+					<a href="/blog/{article.id}">
 						<div class="ar ticle">
 							<div class="top-section">
 								<img

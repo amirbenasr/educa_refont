@@ -49,19 +49,17 @@
 							toggleMenu(e);
 						}
 					}}
-					href="/en"
+					href=""
 				>
 					<img src="/assets/logo.svg" alt="" srcset="" />
 				</a>
 			</div>
 			<div class="desktop-nav">
 				<ul>
-					<a href="/"> <li>Home</li> </a><a href="/en/about"> <li>About</li> </a><a
-						href="/en/contact"
-					>
+					<a href="/"> <li>Home</li> </a><a href="/about"> <li>About</li> </a><a href="/contact">
 						<li>Contact</li>
 					</a>
-					<a href="/en/blog">
+					<a href="/blog">
 						<li>Blog</li>
 					</a>
 				</ul>
@@ -75,12 +73,10 @@
 				</a>
 				<div class="mobile-nav" bind:this={navMobile}>
 					<ul>
-						<a href="/en"> <li>Home</li> </a><a href="/en/about"> <li>About</li> </a><a
-							href="/en/contact"
-						>
+						<a href=""> <li>Home</li> </a><a href="/about"> <li>About</li> </a><a href="/contact">
 							<li>Contact</li>
 						</a>
-						<a href="/en/blog">
+						<a href="/blog">
 							<li>Blog</li>
 						</a>
 					</ul>
