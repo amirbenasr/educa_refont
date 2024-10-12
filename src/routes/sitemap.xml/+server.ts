@@ -1,5 +1,5 @@
 const site = 'https://educaus.com'; // change this to reflect your domain
-const pages: string[] = ['en/']; // populate this with all the slugs you wish to include
+const pages: string[] = ['/', 'about', 'contact', 'blog']; // populate this with all the slugs you wish to include
 
 /** @type {import('./$types').RequestHandler} */
 export async function GET({ url }) {

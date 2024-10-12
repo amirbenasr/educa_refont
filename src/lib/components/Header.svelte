@@ -49,7 +49,7 @@
 							toggleMenu(e);
 						}
 					}}
-					href=""
+					href="/"
 				>
 					<img src="/assets/logo.svg" alt="" srcset="" />
 				</a>

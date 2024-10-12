@@ -8,7 +8,10 @@
 	import ComponentX from '$lib/components/ComponentX.svelte';
 	import Slider from '$lib/components/Slider.svelte';
 	import ContentWrapper from '$lib/components/ContentWrapper.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	let index = 0;
+	let animationPlayed = false;
+
 	function counterEffect(element: any, val: any): any {
 		index++;
 		gsap.to(element, {
@@ -22,103 +25,31 @@
 		});
 	}
 
-	onMount(() => {
+	const registerPlugins = () => {
 		gsap.registerPlugin(ScrollTrigger);
 		gsap.registerPlugin(TextPlugin);
-		// create scrolltriggers
-		const offerTrigger = ScrollTrigger.create({
-			// markers: true,
-			start: 'top 60%',
-			end: 'bottom 20%',
-			trigger: 'section.offer'
-		});
+	};
 
-		const galleryTrigger = ScrollTrigger.create({
-			trigger: 'section.stats',
-			// markers: true,
-			start: 'top 50%',
-			onEnter: () => {
-				tl_staggered.add(counterEffect(n_s, 700)).restart();
-			}
-		});
+	const gallery_init = () => {
+		(window as any)
+			.$('#lightgallery')
+			.justifiedGallery({
+				captions: false,
+				lastRow: 'hide',
+				rowHeight: 120,
+				margins: 5
+			})
+			.on('jg.complete', function () {
+				(window as any).lightGallery(document.getElementById('lightgallery')!, {
+					download: false,
+					plugins: [(window as any).lgZoom, (window as any).lgThumbnail],
+					width: '500px',
+					speed: 500
+				});
+			});
+	};
 
-		const factsTrigger = ScrollTrigger.create({
-			trigger: 'section.facts',
-			// markers: true,
-			start: 'top top%',
-			onEnter: () => {
-				factsAnimation.play();
-			}
-		});
-		// creating timelines
-		const tl_hero = gsap.timeline({
-			paused: true
-		});
-
-		const tl_staggered = gsap.timeline({});
-
-		const tl_gallery = gsap.timeline({
-			scrollTrigger: galleryTrigger
-		});
-
-		const tl_offers = gsap.timeline({
-			paused: true,
-			scrollTrigger: offerTrigger
-		});
-
-		// creating Gallery timeline
-
-		const galleryImages = document.querySelectorAll('.lightgallery a');
-		// const factsCard = document.querySelectorAll('.facts__card');
-
-		// factsCard.forEach((element) => {
-
-		// })
-		const factsAnimation = gsap.fromTo(
-			'.facts__card',
-			{ opacity: 0, x: '-100%' },
-			{
-				// scale: 0.1,
-				paused: true,
-				x: '0',
-				opacity: 1,
-				ease: 'power1.inOut',
-				stagger: {
-					amount: 1.5
-				}
-			}
-		);
-		galleryImages.forEach((img, ix) => {
-			tl_gallery.fromTo(img, { opacity: 0 }, { x: 15, opacity: 1, duration: 0.09 });
-		});
-
-		const listItems = document.querySelectorAll('.offer__card');
-
-		// offers timeline
-		tl_offers
-			.fromTo('.left h1', { opacity: 0, x: '-100px' }, { opacity: 1, x: '0' })
-			.fromTo('.left p', { opacity: 0, x: '-100px' }, { opacity: 1, x: '0' });
-
-		listItems.forEach((element, ix) => {
-			tl_offers.fromTo(
-				element,
-				{
-					x: '0',
-					y: 0,
-					opacity: 0
-				},
-				{
-					x: 10,
-					opacity: 1,
-					duration: 0.6
-				}
-			);
-		});
-
-		// initialize lightGallery
-
-		// init swiper
-
+	const swiper_init = () => {
 		const swiper2 = new Swiper('.testimonials__slider', {
 			autoplay: {
 				delay: 3000
@@ -138,7 +69,9 @@
 				// when window width is >= 640px
 			}
 		});
+	};
 
+	function heroAnimation(tl_hero: GSAPTimeline, tl_staggered: GSAPTimeline) {
 		// create animations using timeline
 		const textContainer = document.querySelector('.text-content');
 		const animatedText = document.querySelector('.animated-text');
@@ -155,8 +88,8 @@
 		tl_hero
 			.fromTo(
 				'.box',
-				{ y: '-100px', opacity: 0, duration: 1.5, display: 'none' },
-				{ y: '0', opacity: 1, duration: 1.5, display: 'unset' }
+				{ y: '-100px', opacity: 0, duration: 0, display: 'none' },
+				{ y: '0', opacity: 1, duration: 0, display: 'unset' }
 			)
 			.from(textContainer, { opacity: 0, duration: 0.5, ease: 'power2.inOut' })
 			.from(animatedText, { y: 50, opacity: 0, duration: 0.5, ease: 'power2.out' })
@@ -166,7 +99,7 @@
 						value: text,
 						delimiter: ''
 					},
-					duration: 3, // Adjust the typing speed
+					duration: 2, // Adjust the typing speed
 					ease: 'power1.inOut'
 				});
 			}) // Staggered Button Animation
@@ -212,111 +145,127 @@
 			.add(counterEffect(n_r, 96))
 			.add(counterEffect(n_u, 30))
 			.fromTo('#apply', { opacity: 0, y: '-100px' }, { opacity: 1, y: '0' }, '>=1');
-		// setTimeout(() => {
-		tl_hero.play();
-		// }, 1000);
+	}
 
-		(window as any)
-			.$('#lightgallery')
-			.justifiedGallery({
-				captions: false,
+	function skipAnimation() {
+		// Set elements to their final state without animation
+		gsap.set('.box', { y: '0', opacity: 1, display: 'unset' });
+		gsap.set('.text-content', { opacity: 1 });
+		gsap.set('.animated-text', { y: 0, opacity: 1 });
+		gsap.set('.hero__subtitle', {
+			text: 'Discover Limitless Opportunities for Travel and Education in the USA'
+		});
+		gsap.set('.stats__card', { opacity: 1, y: 0 });
+		gsap.set('.bg-anim', {
+			backgroundColor: 'var(--secondary-color)',
+			height: '100%',
+			width: '100%'
+		});
+		gsap.set('#n_s', { innerText: '700' });
+		gsap.set('#n_r', { innerText: '96' });
+		gsap.set('#n_u', { innerText: '30' });
+		gsap.set('#apply', { opacity: 1, y: '0' });
+	}
 
-				lastRow: 'hide',
-				rowHeight: 120,
-				margins: 5
-			})
-			.on('jg.complete', function () {
-				(window as any).lightGallery(document.getElementById('lightgallery')!, {
-					download: false,
-					plugins: [(window as any).lgZoom, (window as any).lgThumbnail],
-					width: '500px',
-					speed: 500
-				});
+	onMount(() => {
+		registerPlugins();
+		gallery_init();
+
+		// Check if animation has been played in this session
+		animationPlayed = sessionStorage.getItem('animationPlayed') === 'true';
+
+		const offerTrigger = ScrollTrigger.create({
+			// markers: true,
+			start: 'top 60%',
+			end: 'bottom 20%',
+			trigger: 'section.offer'
+		});
+
+		const galleryTrigger = ScrollTrigger.create({
+			trigger: 'section.stats',
+			// markers: true,
+			start: 'top 50%',
+			onEnter: () => {
+				if (!animationPlayed) {
+					tl_staggered.add(counterEffect(document.getElementById('n_s'), 700)).restart();
+				}
+			}
+		});
+
+		// creating timelines
+		const tl_hero = gsap.timeline({
+			paused: true
+		});
+
+		const tl_staggered = gsap.timeline({});
+
+		const tl_gallery = gsap.timeline({
+			scrollTrigger: galleryTrigger
+		});
+
+		const tl_offers = gsap.timeline({
+			paused: true,
+			scrollTrigger: offerTrigger
+		});
+
+		if (!animationPlayed) {
+			heroAnimation(tl_hero, tl_staggered);
+			tl_hero.play();
+
+			// Mark animation as played for this session
+			sessionStorage.setItem('animationPlayed', 'true');
+		} else {
+			skipAnimation();
+		}
+
+		// creating Gallery timeline
+
+		const galleryImages = document.querySelectorAll('.lightgallery a');
+
+		galleryImages.forEach((img, ix) => {
+			tl_gallery.fromTo(img, { opacity: 0 }, { x: 15, opacity: 1, duration: 0.09 });
+		});
+
+		const listItems = document.querySelectorAll('.offer__card');
+
+		// offers timeline
+
+		if (!animationPlayed) {
+			tl_offers
+				.fromTo('.left h1', { opacity: 0, x: '-100px' }, { opacity: 1, x: '0' })
+				.fromTo('.left p', { opacity: 0, x: '-100px' }, { opacity: 1, x: '0' });
+			listItems.forEach((element, ix) => {
+				tl_offers.fromTo(
+					element,
+					{
+						x: '0',
+						y: 0,
+						opacity: 0
+					},
+					{
+						x: 10,
+						opacity: 1,
+						duration: 0.6
+					}
+				);
 			});
+		}
+
+		swiper_init();
 	});
-	// text machine animation
-	// script.js
 </script>
 
-<svelte:head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	<!-- Open Graph Meta Tags -->
-	<meta property="og:title" content="Study in the USA with Educa US - Tunisia's #1 Agency" />
-	<meta
-		property="og:description"
-		content="Educa US helps Tunisian students unlock opportunities to study in the USA with top universities, high visa approval rates, and expert guidance."
-	/>
-
-	<!-- SEO Meta Tags -->
-	<meta
-		name="description"
-		content="Educa US helps Tunisian students unlock opportunities to study in the USA with top universities, high visa approval rates, and expert guidance."
-	/>
-	<meta
-		name="keywords"
-		content="Study in the USA, Tunisia, Visa Success, Top Universities, Educa US"
-	/>
-
-	<!-- Document Title -->
-	<title>Study in the USA with Educa US - Tunisia's #1 Agency for Visa Success</title>
-</svelte:head>
-
-<!-- <div class="content_wrapper"> -->
-<!-- <div class="hero__content" /> -->
+<SEO
+	title="Study in the USA with Educa US - Tunisia's #1 Agency for Visa Success"
+	description="Educa US helps Tunisian students unlock opportunities to study in the USA with top universities, high visa approval rates, and expert guidance."
+	keywords="Study in the USA, Tunisia, Visa Success, Top Universities, Educa US"
+	url="https://educaus.com"
+/>
 
 <ContentWrapper>
 	<ComponentX />
 	<Slider />
 </ContentWrapper>
-<!-- </div> -->
-
-<!-- <section class="facts">
-	<div class="facts__list">
-		<div class="facts__card">
-			<div class="logo">
-				<i class="fa-school-flag fa-solid fa-2xl" />
-			</div>
-			<h2 class="facts__title">Top Universities</h2>
-			<p class="facts__desription">
-				We have established strong partnerships with prestigious academic institutions across the
-				USA, ensuring that you gain access to quality education and cutting-edge facilities.
-			</p>
-		</div>
-		<div class="facts__card">
-			<div class="logo">
-				<i class="fa-sliders fa-solid fa-2xl" />
-			</div>
-			<h2 class="facts__title">Personalized Programs</h2>
-			<p class="facts__desription">
-				Our team of experienced educators and advisors works closely with you to understand your
-				academic needs and preferences
-			</p>
-		</div>
-		<div class="facts__card">
-			<div class="logo">
-				<i class="fa-people-roof fa-solid fa-2xl" />
-			</div>
-			<h2 class="facts__title">Strong Community</h2>
-			<p class="facts__desription">
-				Our strong community fosters a sense of belonging, encouraging you to make lifelong
-				friendships, collaborate on projects, and engage in enriching activities together
-			</p>
-		</div>
-		<div class="facts__card">
-			<div class="logo">
-				<i class="fa-person-walking-luggage fa-solid fa-2xl" />
-			</div>
-			<h2 class="facts__title">Guidance</h2>
-			<p class="facts__desription">
-				From choosing the right program to assisting with visa applications, we'll be your trusted
-				companions, ensuring a smooth and rewarding journey towards achieving your educational
-				aspirations in the USA.
-			</p>
-		</div>
-	</div>
-</section> -->
 
 <div class="offer_wrapper">
 	<section class="offer container">

@@ -1,9 +1,17 @@
 <script>
 	import Layout from '$lib/components/Layout.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
 </script>
+
+<SEO
+	title="Contact Educa US - Get in Touch for Study in USA Assistance"
+	description="Contact Educa US for expert guidance on studying in the USA. We're here to answer your questions and help you achieve your educational goals."
+	keywords="Contact Educa US, Study in USA, Education Assistance, Tunisia Students"
+	url="https://educaus.com/contact"
+/>
 
 <Layout img="../assets/office_2.png" title="Contact Us">
 	<section class="contact">

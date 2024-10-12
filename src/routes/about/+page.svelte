@@ -1,11 +1,19 @@
 <script>
+	import SEO from '$lib/components/SEO.svelte';
 	import Layout from '$lib/components/Layout.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
 </script>
 
-<Layout title="About" img="../assets/mentor.png">
+<SEO
+	title="About Educa US - Your Gateway to Studying in the USA"
+	description="Learn about Educa US, Tunisia's leading agency for helping students study in the USA. Discover our mission, values, and success stories."
+	keywords="About Educa US, Study Abroad, USA Education, Tunisia Students"
+	url="https://educaus.com/about"
+/>
+
+<Layout img="../assets/mentor.png" title="About">
 	<!-- Main Content -->
 	<div class="container">
 		<!-- <img src="../assets/mentor.png" alt="" srcset="" /> -->
