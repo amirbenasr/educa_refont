@@ -1,0 +1,15 @@
+{
+  "projectId": "prj_8Q4xClKay2JIdJdoo0ZOsTXK6QbZ",
+  "orgId": "team_hzQMq1JBUIHqHuLvm10l65WM",
+  "settings": {
+    "createdAt": 1691663720579,
+    "framework": "sveltekit-1",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": "pnpm run build && pnpm run postbuild",
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "18.x"
+  }
+}
