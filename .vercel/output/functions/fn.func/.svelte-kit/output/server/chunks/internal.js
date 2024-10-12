@@ -39,7 +39,6 @@ const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { form } = $$props;
   let { data_0 = null } = $$props;
   let { data_1 = null } = $$props;
-  let { data_2 = null } = $$props;
   {
     setContext("__svelte__", stores);
   }
@@ -51,7 +50,6 @@ const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   if ($$props.form === void 0 && $$bindings.form && form !== void 0) $$bindings.form(form);
   if ($$props.data_0 === void 0 && $$bindings.data_0 && data_0 !== void 0) $$bindings.data_0(data_0);
   if ($$props.data_1 === void 0 && $$bindings.data_1 && data_1 !== void 0) $$bindings.data_1(data_1);
-  if ($$props.data_2 === void 0 && $$bindings.data_2 && data_2 !== void 0) $$bindings.data_2(data_2);
   let $$settled;
   let $$rendered;
   let previous_head = $$result.head;
@@ -72,31 +70,7 @@ const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       },
       {
         default: () => {
-          return `${constructors[2] ? `${validate_component(constructors[1] || missing_component, "svelte:component").$$render(
-            $$result,
-            { data: data_1, this: components[1] },
-            {
-              this: ($$value) => {
-                components[1] = $$value;
-                $$settled = false;
-              }
-            },
-            {
-              default: () => {
-                return `${validate_component(constructors[2] || missing_component, "svelte:component").$$render(
-                  $$result,
-                  { data: data_2, form, this: components[2] },
-                  {
-                    this: ($$value) => {
-                      components[2] = $$value;
-                      $$settled = false;
-                    }
-                  },
-                  {}
-                )}`;
-              }
-            }
-          )}` : `${validate_component(constructors[1] || missing_component, "svelte:component").$$render(
+          return `${validate_component(constructors[1] || missing_component, "svelte:component").$$render(
             $$result,
             { data: data_1, form, this: components[1] },
             {
@@ -106,7 +80,7 @@ const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
               }
             },
             {}
-          )}`}`;
+          )}`;
         }
       }
     )}` : `${validate_component(constructors[0] || missing_component, "svelte:component").$$render(
@@ -147,7 +121,7 @@ const options = {
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
 		/>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> -->
 
 		<link
 			rel="preload"
@@ -203,7 +177,7 @@ const options = {
 			// 	if (d.getElementById(id)) return;
 			// 	js = d.createElement(s);
 			// 	js.id = id;
-			// 	js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+			// 	js.src = 'https://connect.facebook.net_US/sdk/xfbml.customerchat.js';
 			// 	fjs.parentNode.insertBefore(js, fjs);
 			// })(document, 'script', 'facebook-jssdk');
 		<\/script>
@@ -280,7 +254,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "1yxmyxf"
+  version_hash: "dp9d78"
 };
 async function get_hooks() {
   return {
